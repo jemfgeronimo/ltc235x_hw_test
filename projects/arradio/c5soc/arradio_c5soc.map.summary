@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Sun Dec 18 03:23:12 2022
+Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Standard Edition
+Revision Name : arradio_c5soc
+Top-level Entity Name : system_top
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 30356
+Total pins : 199
+Total virtual pins : 0
+Total block memory bits : 582,488
+Total DSP Blocks : 25
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 3
+Total DLLs : 1

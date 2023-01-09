@@ -1,0 +1,170 @@
+Flow report for arradio_c5soc
+Sun Dec 18 03:29:29 2022
+Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------------+
+; Flow Summary                                                                      ;
++---------------------------------+-------------------------------------------------+
+; Flow Status                     ; Successful - Sun Dec 18 03:28:25 2022           ;
+; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Standard Edition ;
+; Revision Name                   ; arradio_c5soc                                   ;
+; Top-level Entity Name           ; system_top                                      ;
+; Family                          ; Cyclone V                                       ;
+; Device                          ; 5CSXFC6D6F31C8ES                                ;
+; Timing Models                   ; Preliminary                                     ;
+; Logic utilization (in ALMs)     ; 13,326 / 41,910 ( 32 % )                        ;
+; Total registers                 ; 30237                                           ;
+; Total pins                      ; 215 / 499 ( 43 % )                              ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 582,488 / 5,662,720 ( 10 % )                    ;
+; Total DSP Blocks                ; 25 / 112 ( 22 % )                               ;
+; Total HSSI RX PCSs              ; 0 / 9 ( 0 % )                                   ;
+; Total HSSI PMA RX Deserializers ; 0 / 9 ( 0 % )                                   ;
+; Total HSSI TX PCSs              ; 0 / 9 ( 0 % )                                   ;
+; Total HSSI PMA TX Serializers   ; 0 / 9 ( 0 % )                                   ;
+; Total PLLs                      ; 2 / 15 ( 13 % )                                 ;
+; Total DLLs                      ; 1 / 4 ( 25 % )                                  ;
++---------------------------------+-------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 12/18/2022 03:18:57 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; arradio_c5soc       ;
++-------------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                                       ;
++---------------------------------------+---------------------------------------------------------------------------------+---------------+---------------------------------+------------+
+; Assignment Name                       ; Value                                                                           ; Default Value ; Entity Name                     ; Section Id ;
++---------------------------------------+---------------------------------------------------------------------------------+---------------+---------------------------------+------------+
+; COMPILER_SIGNATURE_ID                 ; 335034247123.167130473726233                                                    ; --            ; --                              ; --         ;
+; ECO_REGENERATE_REPORT                 ; On                                                                              ; Off           ; --                              ; --         ;
+; ENABLE_ADVANCED_IO_TIMING             ; -- (Not supported for targeted family)                                          ; --            ; --                              ; --         ;
+; ENABLE_HPS_INTERNAL_TIMING            ; On                                                                              ; Off           ; --                              ; --         ;
+; HPS_ISW_FILE                          ; system_bd/synthesis/submodules/sequencer/sequencer_auto_ac_init.pre.c           ; --            ; system_bd_sys_hps_hps_io_border ; --         ;
+; HPS_ISW_FILE                          ; system_bd/synthesis/submodules/sequencer/sequencer.pre.c                        ; --            ; system_bd_sys_hps_hps_io_border ; --         ;
+; HPS_ISW_FILE                          ; system_bd/synthesis/submodules/sequencer/alt_types.pre.h                        ; --            ; system_bd_sys_hps_hps_io_border ; --         ;
+; HPS_ISW_FILE                          ; system_bd/synthesis/submodules/sequencer/sequencer_defines.pre.h                ; --            ; system_bd_sys_hps_hps_io_border ; --         ;
+; HPS_ISW_FILE                          ; system_bd/synthesis/submodules/sequencer/sequencer_auto.pre.h                   ; --            ; system_bd_sys_hps_hps_io_border ; --         ;
+; HPS_ISW_FILE                          ; system_bd/synthesis/submodules/sequencer/sequencer_auto_inst_init.pre.c         ; --            ; system_bd_sys_hps_hps_io_border ; --         ;
+; HPS_ISW_FILE                          ; system_bd/synthesis/submodules/sequencer/sequencer.pre.h                        ; --            ; system_bd_sys_hps_hps_io_border ; --         ;
+; HPS_ISW_FILE                          ; system_bd/synthesis/submodules/sequencer/tclrpt.pre.c                           ; --            ; system_bd_sys_hps_hps_io_border ; --         ;
+; HPS_ISW_FILE                          ; system_bd/synthesis/submodules/sequencer/sdram_io.pre.h                         ; --            ; system_bd_sys_hps_hps_io_border ; --         ;
+; HPS_ISW_FILE                          ; system_bd/synthesis/submodules/sequencer/emif.pre.xml                           ; --            ; system_bd_sys_hps_hps_io_border ; --         ;
+; HPS_ISW_FILE                          ; system_bd/synthesis/submodules/sequencer/system.pre.h                           ; --            ; system_bd_sys_hps_hps_io_border ; --         ;
+; HPS_ISW_FILE                          ; system_bd/synthesis/submodules/sequencer/tclrpt.pre.h                           ; --            ; system_bd_sys_hps_hps_io_border ; --         ;
+; HPS_ISW_FILE                          ; system_bd/synthesis/submodules/hps.pre.xml                                      ; --            ; system_bd_sys_hps_hps_io_border ; --         ;
+; HPS_PARTITION                         ; On                                                                              ; --            ; system_bd_sys_hps_hps_io_border ; --         ;
+; IP_SEARCH_PATHS                       ; /home/guest/hdl_repo/jemfg/jemfgeronimo_hdl/hdl/library/**/*                    ; --            ; --                              ; --         ;
+; MESSAGE_DISABLE                       ; 17951                                                                           ; --            ; --                              ; --         ;
+; MESSAGE_DISABLE                       ; 18655                                                                           ; --            ; --                              ; --         ;
+; MESSAGE_DISABLE                       ; 19527                                                                           ; --            ; --                              ; --         ;
+; MESSAGE_DISABLE                       ; 114001                                                                          ; --            ; --                              ; --         ;
+; MESSAGE_DISABLE                       ; 276027                                                                          ; --            ; axi_dmac_burst_memory           ; --         ;
+; MISC_FILE                             ; system_bd/synthesis/../system_bd.cmp                                            ; --            ; --                              ; --         ;
+; MISC_FILE                             ; system_bd/synthesis/system_bd_sys_hps_hps.svd                                   ; --            ; --                              ; --         ;
+; MISC_FILE                             ; system_bd/synthesis/../../system_bd.qsys                                        ; --            ; --                              ; --         ;
+; MISC_FILE                             ; system_bd/synthesis/submodules/sequencer/sequencer_auto_ac_init.pre.c           ; --            ; --                              ; --         ;
+; MISC_FILE                             ; system_bd/synthesis/submodules/sequencer/sequencer.pre.c                        ; --            ; --                              ; --         ;
+; MISC_FILE                             ; system_bd/synthesis/submodules/sequencer/alt_types.pre.h                        ; --            ; --                              ; --         ;
+; MISC_FILE                             ; system_bd/synthesis/submodules/sequencer/sequencer_defines.pre.h                ; --            ; --                              ; --         ;
+; MISC_FILE                             ; system_bd/synthesis/submodules/sequencer/sequencer_auto.pre.h                   ; --            ; --                              ; --         ;
+; MISC_FILE                             ; system_bd/synthesis/submodules/sequencer/sequencer_auto_inst_init.pre.c         ; --            ; --                              ; --         ;
+; MISC_FILE                             ; system_bd/synthesis/submodules/sequencer/sequencer.pre.h                        ; --            ; --                              ; --         ;
+; MISC_FILE                             ; system_bd/synthesis/submodules/sequencer/tclrpt.pre.c                           ; --            ; --                              ; --         ;
+; MISC_FILE                             ; system_bd/synthesis/submodules/sequencer/sdram_io.pre.h                         ; --            ; --                              ; --         ;
+; MISC_FILE                             ; system_bd/synthesis/submodules/sequencer/emif.pre.xml                           ; --            ; --                              ; --         ;
+; MISC_FILE                             ; system_bd/synthesis/submodules/sequencer/system.pre.h                           ; --            ; --                              ; --         ;
+; MISC_FILE                             ; system_bd/synthesis/submodules/sequencer/tclrpt.pre.h                           ; --            ; --                              ; --         ;
+; MISC_FILE                             ; system_bd/synthesis/submodules/hps.pre.xml                                      ; --            ; --                              ; --         ;
+; MISC_FILE                             ; system_bd/synthesis/submodules/inc_id.vh                                        ; --            ; --                              ; --         ;
+; MISC_FILE                             ; system_bd/synthesis/submodules/resp.vh                                          ; --            ; --                              ; --         ;
+; SLD_FILE                              ; system_bd/synthesis/system_bd.regmap                                            ; --            ; --                              ; --         ;
+; SLD_FILE                              ; system_bd/synthesis/system_bd.debuginfo                                         ; --            ; --                              ; --         ;
+; SLD_INFO                              ; QSYS_NAME system_bd HAS_SOPCINFO 1 GENERATION_ID 1671304664                     ; --            ; system_bd                       ; --         ;
+; SOPCINFO_FILE                         ; system_bd/synthesis/../../system_bd.sopcinfo                                    ; --            ; --                              ; --         ;
+; SYNTHESIS_ONLY_QIP                    ; On                                                                              ; --            ; --                              ; --         ;
+; TIMING_ANALYZER_DO_REPORT_TIMING      ; On                                                                              ; Off           ; --                              ; --         ;
+; TIMING_ANALYZER_REPORT_SCRIPT         ; /home/guest/hdl_repo/jemfg/jemfgeronimo_hdl/hdl/projects/scripts/adi_tquest.tcl ; --            ; --                              ; --         ;
+; TOP_LEVEL_ENTITY                      ; system_top                                                                      ; arradio_c5soc ; --                              ; --         ;
+; USE_DLL_FREQUENCY_FOR_DQS_DELAY_CHAIN ; On                                                                              ; Off           ; --                              ; --         ;
++---------------------------------------+---------------------------------------------------------------------------------+---------------+---------------------------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:01:40     ; 2.3                     ; 1334 MB             ; 00:02:26                           ;
+; Fitter               ; 00:04:38     ; 1.5                     ; 3728 MB             ; 00:11:28                           ;
+; Assembler            ; 00:00:24     ; 1.0                     ; 847 MB              ; 00:00:14                           ;
+; Timing Analyzer      ; 00:01:02     ; 2.2                     ; 2528 MB             ; 00:02:01                           ;
+; Total                ; 00:07:44     ; --                      ; --                  ; 00:16:09                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                             ;
++----------------------+-----------------------+----------------+------------+----------------+
+; Module Name          ; Machine Hostname      ; OS Name        ; OS Version ; Processor type ;
++----------------------+-----------------------+----------------+------------+----------------+
+; Analysis & Synthesis ; adgt-product-apps-d03 ; Ubuntu 18.04.5 ; 18         ; x86_64         ;
+; Fitter               ; adgt-product-apps-d03 ; Ubuntu 18.04.5 ; 18         ; x86_64         ;
+; Assembler            ; adgt-product-apps-d03 ; Ubuntu 18.04.5 ; 18         ; x86_64         ;
+; Timing Analyzer      ; adgt-product-apps-d03 ; Ubuntu 18.04.5 ; 18         ; x86_64         ;
++----------------------+-----------------------+----------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off arradio_c5soc -c arradio_c5soc
+quartus_fit --read_settings_files=off --write_settings_files=off arradio_c5soc -c arradio_c5soc
+quartus_asm --read_settings_files=off --write_settings_files=off arradio_c5soc -c arradio_c5soc
+quartus_sta arradio_c5soc -c arradio_c5soc
+
+
+
