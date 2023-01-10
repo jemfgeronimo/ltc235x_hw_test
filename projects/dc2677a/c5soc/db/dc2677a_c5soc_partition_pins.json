@@ -136,6 +136,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "cs_n",
+					"strict" : false
+				},
+				{
 					"name" : "gpio_bd_i[0]",
 					"strict" : false
 				},
