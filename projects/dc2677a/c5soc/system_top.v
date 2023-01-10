@@ -151,7 +151,7 @@ module system_top (
   
   // for debugging
   reg cs_n_int = 0;
-  always@(sys_clk) begin
+  always@(posedge sys_clk) begin
 		cs_n_int <= ~cs_n_int;
   end
   assign cs_n = cs_n_int;

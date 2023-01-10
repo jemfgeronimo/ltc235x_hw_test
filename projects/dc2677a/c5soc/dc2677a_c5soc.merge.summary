@@ -1,0 +1,17 @@
+Partition Merge Status : Successful - Tue Jan 10 11:03:41 2023
+Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Standard Edition
+Revision Name : dc2677a_c5soc
+Top-level Entity Name : system_top
+Family : Cyclone V
+Logic utilization (in ALMs) : 13,536 / 41,910 ( 32 % )
+Total registers : 20911
+Total pins : 174 / 499 ( 35 % )
+Total virtual pins : 0
+Total block memory bits : 579,472 / 5,662,720 ( 10 % )
+Total DSP Blocks : 9 / 112 ( 8 % )
+Total HSSI RX PCSs : 0 / 9 ( 0 % )
+Total HSSI PMA RX Deserializers : 0 / 9 ( 0 % )
+Total HSSI TX PCSs : 0 / 9 ( 0 % )
+Total HSSI PMA TX Serializers : 0 / 9 ( 0 % )
+Total PLLs : 1 / 15 ( 7 % )
+Total DLLs : 1 / 4 ( 25 % )

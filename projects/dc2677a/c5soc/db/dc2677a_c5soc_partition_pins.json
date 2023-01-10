@@ -132,11 +132,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "cs_n",
+					"strict" : false
+				},
+				{
 					"name" : "cnv",
 					"strict" : false
 				},
 				{
-					"name" : "cs_n",
+					"name" : "sys_clk",
 					"strict" : false
 				},
 				{
@@ -169,10 +173,6 @@
 				},
 				{
 					"name" : "gpio_bd_i[7]",
-					"strict" : false
-				},
-				{
-					"name" : "sys_clk",
 					"strict" : false
 				},
 				{
