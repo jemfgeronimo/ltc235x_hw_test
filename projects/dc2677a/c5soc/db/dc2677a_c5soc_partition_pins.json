@@ -132,10 +132,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "cs_n",
-					"strict" : false
-				},
-				{
 					"name" : "cnv",
 					"strict" : false
 				},

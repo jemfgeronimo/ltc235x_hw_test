@@ -150,12 +150,12 @@ module system_top (
   assign sys_gpio_i[31:0] = sys_gpio_o[31:0];
   
   // for debugging
-  reg cs_n_int = 0;
+  /*reg cs_n_int = 0;
   always@(posedge sys_clk) begin
 		cs_n_int <= ~cs_n_int;
   end
   assign cs_n = cs_n_int;
-  
+  */
   // instantiations
   system_bd i_system_bd (
     .sys_clk_clk (sys_clk),
@@ -252,8 +252,8 @@ module system_top (
     .axi_ltc235x_device_if_lvds_cmos_n (lvds_cmos_n),
     .axi_ltc235x_device_if_busy (busy),
     .axi_ltc235x_device_if_pd (pd),
-    //.axi_ltc235x_device_if_cs_n (cs_n),
-	 .axi_ltc235x_device_if_cs_n (),
+    .axi_ltc235x_device_if_cs_n (cs_n),
+	 //.axi_ltc235x_device_if_cs_n (), // for debug
     .axi_ltc235x_cnv_if_pwm_0(cnv),
     
     .axi_ltc235x_device_if_scki (scki),

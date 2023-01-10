@@ -210,7 +210,7 @@
     <single attribute="instance widget visible" value="1"/>
     <single attribute="jtag widget visible" value="1"/>
     <single attribute="lock mode" value="0"/>
-    <multi attribute="column width" size="23" value="34,34,220,74,68,78,95,96,98,98,88,88,110,101,101,101,101,101,101,101,101,107,109"/>
+    <multi attribute="column width" size="23" value="34,34,539,74,68,78,95,96,98,98,88,88,110,101,101,101,101,101,101,101,101,107,109"/>
     <multi attribute="frame size" size="2" value="1278,1368"/>
     <multi attribute="jtag widget size" size="2" value="328,129"/>
   </global_info>
