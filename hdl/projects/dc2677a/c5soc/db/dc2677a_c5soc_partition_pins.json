@@ -124,15 +124,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "cnv",
-					"strict" : false
-				},
-				{
 					"name" : "scki",
 					"strict" : false
 				},
 				{
 					"name" : "sdi",
+					"strict" : false
+				},
+				{
+					"name" : "cnv",
 					"strict" : false
 				},
 				{
@@ -184,11 +184,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "sdo_2",
+					"name" : "sdo_3",
 					"strict" : false
 				},
 				{
-					"name" : "sdo_3",
+					"name" : "sdo_2",
 					"strict" : false
 				},
 				{
@@ -196,11 +196,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "sdo_5",
+					"name" : "sdo_6",
 					"strict" : false
 				},
 				{
-					"name" : "sdo_6",
+					"name" : "sdo_5",
 					"strict" : false
 				},
 				{
