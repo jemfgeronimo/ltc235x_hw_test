@@ -108,10 +108,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "gpio_bd_o[3]",
-					"strict" : false
-				},
-				{
 					"name" : "gpio_bd_o[0]",
 					"strict" : false
 				},
@@ -124,6 +120,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "gpio_bd_o[3]",
+					"strict" : false
+				},
+				{
 					"name" : "cnv",
 					"strict" : false
 				},
@@ -133,10 +133,6 @@
 				},
 				{
 					"name" : "sdi",
-					"strict" : false
-				},
-				{
-					"name" : "sys_clk",
 					"strict" : false
 				},
 				{
@@ -169,6 +165,10 @@
 				},
 				{
 					"name" : "gpio_bd_i[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sys_clk",
 					"strict" : false
 				},
 				{
