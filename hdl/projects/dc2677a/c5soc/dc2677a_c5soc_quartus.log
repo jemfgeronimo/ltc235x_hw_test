@@ -1,0 +1,13 @@
+2023.01.12.11:59:06 Info: Doing: <b>qsys-script --script=system_qsys_script.tcl</b>
+2023.01.12.11:59:08 Info: set_module_property NAME system_bd
+2023.01.12.11:59:08 Info: set_project_property DEVICE_FAMILY Cyclone V
+2023.01.12.11:59:08 Info: set_project_property DEVICE 5CSXFC6D6F31C8ES
+2023.01.12.11:59:08 Info: add_instance sys_clk clock_source 
+2023.01.12.11:59:09 Info: set_instance_parameter_value sys_clk clockFrequency 50000000.0
+2023.01.12.11:59:09 Info: set_instance_parameter_value sys_clk clockFrequencyKnown 1
+2023.01.12.11:59:09 Info: set_instance_parameter_value sys_clk resetSynchronousEdges NONE
+2023.01.12.11:59:09 Info: add_interface sys_clk clock sink
+2023.01.12.11:59:09 Info: add_interface sys_rst reset sink
+2023.01.12.11:59:09 Info: set_interface_property sys_clk EXPORT_OF sys_clk.clk_in
+2023.01.12.11:59:09 Info: set_interface_property sys_rst EXPORT_OF sys_clk.clk_in_reset
+2023.01.12.11:59:09 Info: add_instance sys_hps altera_hps 
