@@ -108,6 +108,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "gpio_bd_o[3]",
+					"strict" : false
+				},
+				{
 					"name" : "gpio_bd_o[0]",
 					"strict" : false
 				},
@@ -116,15 +120,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "cnv",
-					"strict" : false
-				},
-				{
 					"name" : "gpio_bd_o[2]",
 					"strict" : false
 				},
 				{
-					"name" : "gpio_bd_o[3]",
+					"name" : "cnv",
 					"strict" : false
 				},
 				{
