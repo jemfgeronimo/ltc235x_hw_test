@@ -168,6 +168,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "sys_clk",
+					"strict" : false
+				},
+				{
 					"name" : "busy",
 					"strict" : false
 				},
@@ -201,10 +205,6 @@
 				},
 				{
 					"name" : "sdo_7",
-					"strict" : false
-				},
-				{
-					"name" : "sys_clk",
 					"strict" : false
 				}
 			]

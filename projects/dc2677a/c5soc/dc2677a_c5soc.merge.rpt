@@ -1,5 +1,5 @@
 Partition Merge report for dc2677a_c5soc
-Tue Jan 10 14:22:36 2023
+Wed Jan 11 19:01:42 2023
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Standard Edition
 
 
@@ -10,8 +10,8 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Standard Edition
   2. Partition Merge Summary
   3. Partition Merge Netlist Types Used
   4. Partition Merge Rapid Recompile Summary
-  5. Partition Merge Rapid Recompile Table of Changed Logic Entities
-  6. Partition Merge Rapid Recompile Table of Modified Assignments
+  5. Partition Merge Rapid Recompile Table of Modified Assignments
+  6. Partition Merge Rapid Recompile Table of Changed Logic Entities
   7. Connections to In-System Debugging Instance "auto_signaltap_0"
   8. Partition Merge Partition Pin Processing
   9. Partition Merge Resource Usage Summary
@@ -44,16 +44,16 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------+
 ; Partition Merge Summary                                                           ;
 +---------------------------------+-------------------------------------------------+
-; Partition Merge Status          ; Successful - Tue Jan 10 14:22:36 2023           ;
+; Partition Merge Status          ; Successful - Wed Jan 11 19:01:41 2023           ;
 ; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Standard Edition ;
 ; Revision Name                   ; dc2677a_c5soc                                   ;
 ; Top-level Entity Name           ; system_top                                      ;
 ; Family                          ; Cyclone V                                       ;
-; Logic utilization (in ALMs)     ; 13,532 / 41,910 ( 32 % )                        ;
-; Total registers                 ; 20895                                           ;
+; Logic utilization (in ALMs)     ; 13,440 / 41,910 ( 32 % )                        ;
+; Total registers                 ; 20724                                           ;
 ; Total pins                      ; 174 / 499 ( 35 % )                              ;
 ; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 642,192 / 5,662,720 ( 11 % )                    ;
+; Total block memory bits         ; 577,424 / 5,662,720 ( 10 % )                    ;
 ; Total DSP Blocks                ; 9 / 112 ( 8 % )                                 ;
 ; Total HSSI RX PCSs              ; 0 / 9 ( 0 % )                                   ;
 ; Total HSSI PMA RX Deserializers ; 0 / 9 ( 0 % )                                   ;
@@ -73,119 +73,68 @@ https://fpgasoftware.intel.com/eula.
 ; sld_hub:auto_hub                       ; Auto-generated ; Hybrid (Rapid Recompile) ; Post-Synthesis         ; sld_hub:auto_hub                                                                                                       ;
 ; sld_signaltap:auto_signaltap_0         ; Auto-generated ; Hybrid (Rapid Recompile) ; Post-Synthesis         ; sld_signaltap:auto_signaltap_0                                                                                         ;
 ; system_bd_sys_hps_hps_io_border:border ; Auto-generated ; Post-Synthesis           ; Post-Synthesis         ; system_bd:i_system_bd|system_bd_sys_hps:sys_hps|system_bd_sys_hps_hps_io:hps_io|system_bd_sys_hps_hps_io_border:border ;
-; hard_block:auto_generated_inst         ; Auto-generated ; Source File              ; Source File            ; hard_block:auto_generated_inst                                                                                         ;
+; hard_block:auto_generated_inst         ; Auto-generated ; Hybrid (Rapid Recompile) ; Source File            ; hard_block:auto_generated_inst                                                                                         ;
 +----------------------------------------+----------------+--------------------------+------------------------+------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Partition Merge Rapid Recompile Summary                                                                                                                                                                                    ;
-+--------------------------------+------------------------+--------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
-; Partition Name                 ; Rapid Recompile Status ; Netlist Preservation Requested ; Netlist Preservation Achieved ; Notes                                                                                           ;
-+--------------------------------+------------------------+--------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
-; Top                            ; Engaged                ; 100.00% (39759 / 39759)        ; 99.53% (39572 / 39759)        ;                                                                                                 ;
-; sld_hub:auto_hub               ; Engaged                ; 94.59% (297 / 314)             ; 65.61% (206 / 314)            ;                                                                                                 ;
-; sld_signaltap:auto_signaltap_0 ; Engaged                ; 78.85% (917 / 1163)            ; 74.98% (872 / 1163)           ;                                                                                                 ;
-; hard_block:auto_generated_inst ; Disengaged             ; 100.00% (739 / 739)            ; 0.00% (0 / 739)               ; Rapid Recompile disengaged: Rapid Recompile does not preserve a modified hard_block partition.  ;
-+--------------------------------+------------------------+--------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Rapid Recompile Summary                                                                                          ;
++--------------------------------+------------------------+--------------------------------+-------------------------------+-------+
+; Partition Name                 ; Rapid Recompile Status ; Netlist Preservation Requested ; Netlist Preservation Achieved ; Notes ;
++--------------------------------+------------------------+--------------------------------+-------------------------------+-------+
+; Top                            ; Engaged                ; 100.00% (39859 / 39859)        ; 100.00% (39859 / 39859)       ;       ;
+; sld_hub:auto_hub               ; Engaged                ; 95.54% (300 / 314)             ; 65.61% (206 / 314)            ;       ;
+; sld_signaltap:auto_signaltap_0 ; Engaged                ; 86.34% (695 / 805)             ; 84.72% (682 / 805)            ;       ;
+; hard_block:auto_generated_inst ; Engaged                ; 100.00% (750 / 750)            ; 100.00% (750 / 750)           ;       ;
++--------------------------------+------------------------+--------------------------------+-------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Partition Merge Rapid Recompile Table of Changed Logic Entities                                                                                                                                                                                                                                                                                            ;
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------+
-; Changed Logic Entities                                                                                                                                                                                                                                                                                                           ; Number of Changed Nodes ;
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------+
-; |system_top|system_bd:i_system_bd|system_bd_sys_gpio_bd:sys_gpio_bd                                                                                                                                                                                                                                                              ; 14                      ;
-; |system_top                                                                                                                                                                                                                                                                                                                      ; 6                       ;
-; |system_top|system_bd:i_system_bd|system_bd_sys_hps:sys_hps|system_bd_sys_hps_fpga_interfaces:fpga_interfaces                                                                                                                                                                                                                    ; 6                       ;
-; |system_top|system_bd:i_system_bd|system_bd_sys_spi:sys_spi                                                                                                                                                                                                                                                                      ; 4                       ;
-; |system_top|system_bd:i_system_bd|axi_dmac:axi_adc_dma|axi_dmac_regmap:i_regmap                                                                                                                                                                                                                                                  ; 2                       ;
-; |system_top|system_bd:i_system_bd|axi_dmac:video_dmac|axi_dmac_regmap:i_regmap                                                                                                                                                                                                                                                   ; 2                       ;
-; |sld_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                         ; 28                      ;
-; |sld_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg ; 9                       ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst                                                                                                                                                                                           ; 144                     ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem                                                                                                                                                                       ; 58                      ;
-; |sld_signaltap                                                                                                                                                                                                                                                                                                                   ; 42                      ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_sh84:auto_generated                                                                                                                                                       ; 38                      ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:read_pointer_counter|cntr_82j:auto_generated                                                                                            ; 38                      ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body                                                                                                                                                                                                                                      ; 35                      ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_advance_pointer_counter|cntr_29i:auto_generated                                                                                  ; 32                      ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:info_data_shift_out                                                                                                                    ; 24                      ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc                                                                                                                                                                                              ; 20                      ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|lpm_shiftreg:trigger_condition_deserialize                                                                        ; 20                      ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:\adv_point_3_and_more:advance_pointer_counter|cntr_39i:auto_generated                                                                   ; 20                      ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst                                                                                                                                                     ; 19                      ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:status_data_shift_out                                                                                                                  ; 14                      ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:ram_data_shift_out                                                                                                                     ; 10                      ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|lpm_shiftreg:segment_offset_config_deserialize                                                                                                                                                                                       ; 7                       ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity                                                                                                                                            ; 7                       ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:16:sm1             ; 3                       ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:17:sm1             ; 3                       ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:18:sm1             ; 3                       ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:19:sm1             ; 3                       ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:20:sm1             ; 3                       ;
-; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:21:sm1             ; 3                       ;
-; |system_top|system_bd:i_system_bd|system_bd_sys_hps:sys_hps|system_bd_sys_hps_fpga_interfaces:fpga_interfaces                                                                                                                                                                                                                    ; 6                       ;
-; |system_top                                                                                                                                                                                                                                                                                                                      ; 4                       ;
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Rapid Recompile Table of Modified Assignments                                                                                                                              ;
++------------------------------------------+----------------------+-------------------------------------------------------------+------------------------------------------------------------+
+; Modified Assignments                     ; Target               ; Previous Value                                              ; Current Value                                              ;
++------------------------------------------+----------------------+-------------------------------------------------------------+------------------------------------------------------------+
+; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd ; --                                                          ; crc[20]                                                    ;
+; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd ; --                                                          ; crc[21]                                                    ;
+; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd ; --                                                          ; crc[25]                                                    ;
+; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|vcc ; --                                                          ; crc[26]                                                    ;
+; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|vcc ; --                                                          ; crc[28]                                                    ;
+; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|vcc ; --                                                          ; crc[31]                                                    ;
+; SLD_NODE_PARAMETER_ASSIGNMENT            ;                      ; --                                                          ; SLD_INVERSION_MASK=000000000000000000000000000000000000000 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT            ;                      ; --                                                          ; SLD_INVERSION_MASK_LENGTH=39                               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT            ;                      ; --                                                          ; SLD_SEGMENT_SIZE=128                                       ;
+; SLD_NODE_PARAMETER_ASSIGNMENT            ;                      ; --                                                          ; SLD_SAMPLE_DEPTH=128                                       ;
+; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd ; crc[26]                                                     ; --                                                         ;
+; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd ; crc[31]                                                     ; --                                                         ;
+; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd ; crc[28]                                                     ; --                                                         ;
+; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|vcc ; crc[20]                                                     ; --                                                         ;
+; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|vcc ; crc[21]                                                     ; --                                                         ;
+; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|vcc ; crc[25]                                                     ; --                                                         ;
+; SLD_NODE_PARAMETER_ASSIGNMENT            ;                      ; SLD_INVERSION_MASK=0000000000000000000000000000000000000000 ; --                                                         ;
+; SLD_NODE_PARAMETER_ASSIGNMENT            ;                      ; SLD_INVERSION_MASK_LENGTH=40                                ; --                                                         ;
+; SLD_NODE_PARAMETER_ASSIGNMENT            ;                      ; SLD_SEGMENT_SIZE=256                                        ; --                                                         ;
+; SLD_NODE_PARAMETER_ASSIGNMENT            ;                      ; SLD_SAMPLE_DEPTH=256                                        ; --                                                         ;
++------------------------------------------+----------------------+-------------------------------------------------------------+------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Partition Merge Rapid Recompile Table of Modified Assignments                                                                                                                                                              ;
-+------------------------------------------+------------------------------------------------------------+--------------------+-----------------------------------------------------------------------------------------------+
-; Modified Assignments                     ; Target                                                     ; Previous Value     ; Current Value                                                                                 ;
-+------------------------------------------+------------------------------------------------------------+--------------------+-----------------------------------------------------------------------------------------------+
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd                                       ; --                 ; crc[4]                                                                                        ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd                                       ; --                 ; crc[12]                                                                                       ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd                                       ; --                 ; crc[18]                                                                                       ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd                                       ; --                 ; crc[19]                                                                                       ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd                                       ; --                 ; crc[21]                                                                                       ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd                                       ; --                 ; crc[0]                                                                                        ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd                                       ; --                 ; crc[8]                                                                                        ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd                                       ; --                 ; crc[27]                                                                                       ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|vcc                                       ; --                 ; crc[3]                                                                                        ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|vcc                                       ; --                 ; crc[6]                                                                                        ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|vcc                                       ; --                 ; crc[10]                                                                                       ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|vcc                                       ; --                 ; crc[11]                                                                                       ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|vcc                                       ; --                 ; crc[14]                                                                                       ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|vcc                                       ; --                 ; crc[26]                                                                                       ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|vcc                                       ; --                 ; crc[29]                                                                                       ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|vcc                                       ; --                 ; crc[31]                                                                                       ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|vcc                                       ; --                 ; crc[15]                                                                                       ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|vcc                                       ; --                 ; crc[17]                                                                                       ;
-; SLD_NODE_PARAMETER_ASSIGNMENT            ;                                                            ; --                 ; SLD_DATA_BITS=16                                                                              ;
-; SLD_NODE_PARAMETER_ASSIGNMENT            ;                                                            ; --                 ; SLD_TRIGGER_BITS=16                                                                           ;
-; SLD_NODE_PARAMETER_ASSIGNMENT            ;                                                            ; --                 ; SLD_STORAGE_QUALIFIER_BITS=16                                                                 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT            ;                                                            ; --                 ; SLD_INVERSION_MASK=00000000000000000000000000000000000000000000000000000000000000000000000000 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT            ;                                                            ; --                 ; SLD_INVERSION_MASK_LENGTH=74                                                                  ;
-; SLD_NODE_PARAMETER_ASSIGNMENT            ;                                                            ; --                 ; SLD_SEGMENT_SIZE=4096                                                                         ;
-; SLD_NODE_PARAMETER_ASSIGNMENT            ;                                                            ; --                 ; SLD_SAMPLE_DEPTH=4096                                                                         ;
-; CONNECT_TO_SLD_NODE_ENTITY_PORT          ; system_bd:i_system_bd|axi_dmac:axi_adc_dma|s_axi_aclk      ; acq_trigger_in[16] ; --                                                                                            ;
-; CONNECT_TO_SLD_NODE_ENTITY_PORT          ; system_bd:i_system_bd|axi_dmac:axi_adc_dma|s_axi_aclk      ; acq_data_in[16]    ; --                                                                                            ;
-; CONNECT_TO_SLD_NODE_ENTITY_PORT          ; system_bd:i_system_bd|axi_ltc235x:axi_ltc235x|external_clk ; acq_trigger_in[17] ; --                                                                                            ;
-; CONNECT_TO_SLD_NODE_ENTITY_PORT          ; system_bd:i_system_bd|axi_ltc235x:axi_ltc235x|external_clk ; acq_data_in[17]    ; --                                                                                            ;
-; CONNECT_TO_SLD_NODE_ENTITY_PORT          ; system_bd:i_system_bd|axi_ltc235x:axi_ltc235x|s_axi_aclk   ; acq_trigger_in[18] ; --                                                                                            ;
-; CONNECT_TO_SLD_NODE_ENTITY_PORT          ; system_bd:i_system_bd|axi_ltc235x:axi_ltc235x|s_axi_aclk   ; acq_data_in[18]    ; --                                                                                            ;
-; CONNECT_TO_SLD_NODE_ENTITY_PORT          ; system_bd:i_system_bd|axi_pwm_gen:adc_pwm_gen|ext_clk      ; acq_trigger_in[19] ; --                                                                                            ;
-; CONNECT_TO_SLD_NODE_ENTITY_PORT          ; system_bd:i_system_bd|axi_pwm_gen:adc_pwm_gen|ext_clk      ; acq_data_in[19]    ; --                                                                                            ;
-; CONNECT_TO_SLD_NODE_ENTITY_PORT          ; system_bd:i_system_bd|axi_pwm_gen:adc_pwm_gen|s_axi_aclk   ; acq_trigger_in[20] ; --                                                                                            ;
-; CONNECT_TO_SLD_NODE_ENTITY_PORT          ; system_bd:i_system_bd|axi_pwm_gen:adc_pwm_gen|s_axi_aclk   ; acq_data_in[20]    ; --                                                                                            ;
-; CONNECT_TO_SLD_NODE_ENTITY_PORT          ; system_bd:i_system_bd|sys_clk_clk                          ; acq_trigger_in[21] ; --                                                                                            ;
-; CONNECT_TO_SLD_NODE_ENTITY_PORT          ; system_bd:i_system_bd|sys_clk_clk                          ; acq_data_in[21]    ; --                                                                                            ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd                                       ; crc[15]            ; --                                                                                            ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd                                       ; crc[17]            ; --                                                                                            ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd                                       ; crc[3]             ; --                                                                                            ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd                                       ; crc[6]             ; --                                                                                            ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd                                       ; crc[10]            ; --                                                                                            ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd                                       ; crc[11]            ; --                                                                                            ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd                                       ; crc[14]            ; --                                                                                            ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd                                       ; crc[26]            ; --                                                                                            ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd                                       ; crc[29]            ; --                                                                                            ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|gnd                                       ; crc[31]            ; --                                                                                            ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|vcc                                       ; crc[0]             ; --                                                                                            ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|vcc                                       ; crc[8]             ; --                                                                                            ;
-; POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT ; auto_signaltap_0|vcc                                       ; crc[27]            ; --                                                                                            ;
-+------------------------------------------+------------------------------------------------------------+--------------------+-----------------------------------------------------------------------------------------------+
-This list only includes the top 50 out of 62 changed assignments
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Rapid Recompile Table of Changed Logic Entities                                                                                                                                                                                                                                                                    ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------+
+; Changed Logic Entities                                                                                                                                                                                                                                                                                   ; Number of Changed Nodes ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------+
+; |sld_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub ; 29                      ;
+; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body                                                                                                                                                                                                              ; 80                      ;
+; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst                                                                                                                                                                   ; 56                      ;
+; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem                                                                                                                                               ; 34                      ;
+; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc                                                                                                                                                                      ; 28                      ;
+; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:info_data_shift_out                                                                                            ; 16                      ;
+; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_i884:auto_generated                                                                                                                               ; 12                      ;
+; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_advance_pointer_counter|cntr_39i:auto_generated                                                          ; 6                       ;
+; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:status_data_shift_out                                                                                          ; 6                       ;
+; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst                                                                                                                             ; 4                       ;
+; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|lpm_shiftreg:segment_offset_config_deserialize                                                                                                                                                               ; 3                       ;
+; |sld_signaltap|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:read_pointer_counter|cntr_7vi:auto_generated                                                                    ; 2                       ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -197,12 +146,6 @@ This list only includes the top 50 out of 62 changed assignments
 ; busy                 ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; busy~input                                                                              ; N/A     ;
 ; cnv                  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; system_bd:i_system_bd|axi_pwm_gen:adc_pwm_gen|axi_pwm_gen_1:i0_axi_pwm_gen_1|pulse      ; N/A     ;
 ; cnv                  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; system_bd:i_system_bd|axi_pwm_gen:adc_pwm_gen|axi_pwm_gen_1:i0_axi_pwm_gen_1|pulse      ; N/A     ;
-; cs_n                 ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; QIC_SIGNALTAP_GND                                                                       ; N/A     ;
-; cs_n                 ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; QIC_SIGNALTAP_GND                                                                       ; N/A     ;
-; lvds_cmos_n          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; QIC_SIGNALTAP_GND                                                                       ; N/A     ;
-; lvds_cmos_n          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; QIC_SIGNALTAP_GND                                                                       ; N/A     ;
-; pd                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; QIC_SIGNALTAP_GND                                                                       ; N/A     ;
-; pd                   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; QIC_SIGNALTAP_GND                                                                       ; N/A     ;
 ; scki                 ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; system_bd:i_system_bd|axi_ltc235x:axi_ltc235x|axi_ltc235x_cmos:i_ltc235x_cmos|scki      ; N/A     ;
 ; scki                 ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; system_bd:i_system_bd|axi_ltc235x:axi_ltc235x|axi_ltc235x_cmos:i_ltc235x_cmos|scki      ; N/A     ;
 ; scko                 ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; scko~input                                                                              ; N/A     ;
@@ -211,21 +154,7 @@ This list only includes the top 50 out of 62 changed assignments
 ; sdi                  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; system_bd:i_system_bd|axi_ltc235x:axi_ltc235x|axi_ltc235x_cmos:i_ltc235x_cmos|Equal10~0 ; N/A     ;
 ; sdo_0                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sdo_0~input                                                                             ; N/A     ;
 ; sdo_0                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sdo_0~input                                                                             ; N/A     ;
-; sdo_1                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sdo_1~input                                                                             ; N/A     ;
-; sdo_1                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sdo_1~input                                                                             ; N/A     ;
-; sdo_2                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sdo_2~input                                                                             ; N/A     ;
-; sdo_2                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sdo_2~input                                                                             ; N/A     ;
-; sdo_3                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sdo_3~input                                                                             ; N/A     ;
-; sdo_3                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sdo_3~input                                                                             ; N/A     ;
-; sdo_4                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sdo_4~input                                                                             ; N/A     ;
-; sdo_4                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sdo_4~input                                                                             ; N/A     ;
-; sdo_5                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sdo_5~input                                                                             ; N/A     ;
-; sdo_5                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sdo_5~input                                                                             ; N/A     ;
-; sdo_6                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sdo_6~input                                                                             ; N/A     ;
-; sdo_6                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sdo_6~input                                                                             ; N/A     ;
-; sdo_7                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sdo_7~input                                                                             ; N/A     ;
-; sdo_7                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sdo_7~input                                                                             ; N/A     ;
-; sys_clk              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sys_clk                                                                                 ; N/A     ;
+; sys_clk              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sys_clk~input                                                                           ; N/A     ;
 ; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                     ; N/A     ;
 ; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                     ; N/A     ;
 ; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                     ; N/A     ;
@@ -238,10 +167,10 @@ This list only includes the top 50 out of 62 changed assignments
 ; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                     ; N/A     ;
 ; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                     ; N/A     ;
 ; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                     ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                     ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                     ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                     ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                     ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                     ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                     ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                     ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                     ; N/A     ;
 ; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                     ; N/A     ;
 ; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                     ; N/A     ;
 ; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                     ; N/A     ;
@@ -905,8 +834,10 @@ This list only includes the top 50 out of 62 changed assignments
 ;     -- system_bd:i_system_bd|system_bd_sys_hps:sys_hps|system_bd_sys_hps_hps_io:hps_io|system_bd_sys_hps_hps_io_border:border|hps_io_spim1_inst_SS0[0]                                                                                                                                                                                                                                       ; system_bd_sys_hps_hps_io_border:border ; Output Port   ; n/a                ;                                             ;
 ;                                                                                                                                                                                                                                                                                                                                                                                              ;                                        ;               ;                    ;                                             ;
 ; sys_clk                                                                                                                                                                                                                                                                                                                                                                                      ; Top                                    ; Input Port    ; n/a                ;                                             ;
-;     -- sys_clk                                                                                                                                                                                                                                                                                                                                                                               ; Top                                    ; Input Pad     ; Unplaced           ; Synthesized                                 ;
-;     -- sys_clk~input                                                                                                                                                                                                                                                                                                                                                                         ; Top                                    ; Input Buffer  ; Unplaced           ; Synthesized                                 ;
+;     -- sys_clk                                                                                                                                                                                                                                                                                                                                                                               ; Top                                    ; Input Pad     ; Unplaced           ; Preserved from Synthesis Netlist (WYSIWYG)  ;
+;     -- sys_clk~input                                                                                                                                                                                                                                                                                                                                                                         ; Top                                    ; Input Buffer  ; Unplaced           ; Preserved from Synthesis Netlist (WYSIWYG)  ;
+;                                                                                                                                                                                                                                                                                                                                                                                              ;                                        ;               ;                    ;                                             ;
+; system_bd:i_system_bd|altera_pll_reconfig_top:pixel_clk_pll_reconfig|altera_pll_reconfig_core:NM28_reconfig.reconfig_core.altera_pll_reconfig_core_inst0|generic_lcell_comb:lcell_fpll_0_1|combout~2                                                                                                                                                                                         ; Top                                    ; Output Port   ; n/a                ;                                             ;
 ;                                                                                                                                                                                                                                                                                                                                                                                              ;                                        ;               ;                    ;                                             ;
 ; uart0_rx                                                                                                                                                                                                                                                                                                                                                                                     ; Top                                    ; Input Port    ; n/a                ;                                             ;
 ;     -- uart0_rx                                                                                                                                                                                                                                                                                                                                                                              ; Top                                    ; Input Pad     ; IOPAD_X79_Y81_N7   ; Preserved from Post-Fit or Imported Netlist ;
@@ -1015,8 +946,8 @@ This list only includes the top 50 out of 62 changed assignments
 ;     -- vga_blu[7]~output                                                                                                                                                                                                                                                                                                                                                                     ; Top                                    ; Output Buffer ; IOOBUF_X89_Y15_N39 ; Preserved from Post-Fit or Imported Netlist ;
 ;                                                                                                                                                                                                                                                                                                                                                                                              ;                                        ;               ;                    ;                                             ;
 ; vga_clk                                                                                                                                                                                                                                                                                                                                                                                      ; Top                                    ; Output Port   ; n/a                ;                                             ;
-;     -- vga_clk                                                                                                                                                                                                                                                                                                                                                                               ; Top                                    ; Output Pad    ; Unplaced           ; Synthesized                                 ;
-;     -- vga_clk~output                                                                                                                                                                                                                                                                                                                                                                        ; Top                                    ; Output Buffer ; Unplaced           ; Synthesized                                 ;
+;     -- vga_clk                                                                                                                                                                                                                                                                                                                                                                               ; Top                                    ; Output Pad    ; Unplaced           ; Preserved from Synthesis Netlist (WYSIWYG)  ;
+;     -- vga_clk~output                                                                                                                                                                                                                                                                                                                                                                        ; Top                                    ; Output Buffer ; Unplaced           ; Preserved from Synthesis Netlist (WYSIWYG)  ;
 ;                                                                                                                                                                                                                                                                                                                                                                                              ;                                        ;               ;                    ;                                             ;
 ; vga_grn[0]                                                                                                                                                                                                                                                                                                                                                                                   ; Top                                    ; Output Port   ; n/a                ;                                             ;
 ;     -- vga_grn[0]                                                                                                                                                                                                                                                                                                                                                                            ; Top                                    ; Output Pad    ; IOPAD_X89_Y6_N20   ; Preserved from Post-Fit or Imported Netlist ;
@@ -1097,42 +1028,42 @@ This list only includes the top 50 out of 62 changed assignments
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+---------------+--------------------+---------------------------------------------+
 
 
-+-------------------------------------------------------------+
-; Partition Merge Resource Usage Summary                      ;
-+---------------------------------------------+---------------+
-; Resource                                    ; Usage         ;
-+---------------------------------------------+---------------+
-; Estimate of Logic utilization (ALMs needed) ; 14434         ;
-;                                             ;               ;
-; Combinational ALUT usage for logic          ; 11514         ;
-;     -- 7 input functions                    ; 126           ;
-;     -- 6 input functions                    ; 2209          ;
-;     -- 5 input functions                    ; 1959          ;
-;     -- 4 input functions                    ; 2754          ;
-;     -- <=3 input functions                  ; 4466          ;
-;                                             ;               ;
-; Dedicated logic registers                   ; 20707         ;
-;                                             ;               ;
-; I/O pins                                    ; 174           ;
-; I/O registers                               ; 188           ;
-; Total MLAB memory bits                      ; 0             ;
-; Total block memory bits                     ; 642192        ;
-;                                             ;               ;
-; Total DSP Blocks                            ; 9             ;
-;                                             ;               ;
-; Total PLLs                                  ; 1             ;
-;     -- Fractional PLLs                      ; 1             ;
-;                                             ;               ;
-; Total DLLs                                  ; 1             ;
-; HSSI RX PCSs                                ; 0 / 9 ( 0 % ) ;
-; HSSI PMA RX Deserializers                   ; 0 / 9 ( 0 % ) ;
-; HSSI TX PCSs                                ; 0 / 9 ( 0 % ) ;
-; HSSI PMA TX Serializers                     ; 0 / 9 ( 0 % ) ;
-; Maximum fan-out node                        ; sys_clk~input ;
-; Maximum fan-out                             ; 18744         ;
-; Total fan-out                               ; 146181        ;
-; Average fan-out                             ; 3.51          ;
-+---------------------------------------------+---------------+
++--------------------------------------------------------------------+
+; Partition Merge Resource Usage Summary                             ;
++---------------------------------------------+----------------------+
+; Resource                                    ; Usage                ;
++---------------------------------------------+----------------------+
+; Estimate of Logic utilization (ALMs needed) ; 14388                ;
+;                                             ;                      ;
+; Combinational ALUT usage for logic          ; 11470                ;
+;     -- 7 input functions                    ; 138                  ;
+;     -- 6 input functions                    ; 2186                 ;
+;     -- 5 input functions                    ; 1947                 ;
+;     -- 4 input functions                    ; 2766                 ;
+;     -- <=3 input functions                  ; 4433                 ;
+;                                             ;                      ;
+; Dedicated logic registers                   ; 20536                ;
+;                                             ;                      ;
+; I/O pins                                    ; 174                  ;
+; I/O registers                               ; 188                  ;
+; Total MLAB memory bits                      ; 0                    ;
+; Total block memory bits                     ; 577424               ;
+;                                             ;                      ;
+; Total DSP Blocks                            ; 9                    ;
+;                                             ;                      ;
+; Total PLLs                                  ; 1                    ;
+;     -- Fractional PLLs                      ; 1                    ;
+;                                             ;                      ;
+; Total DLLs                                  ; 1                    ;
+; HSSI RX PCSs                                ; 0 / 9 ( 0 % )        ;
+; HSSI PMA RX Deserializers                   ; 0 / 9 ( 0 % )        ;
+; HSSI TX PCSs                                ; 0 / 9 ( 0 % )        ;
+; HSSI PMA TX Serializers                     ; 0 / 9 ( 0 % )        ;
+; Maximum fan-out node                        ; sys_clk~inputCLKENA0 ;
+; Maximum fan-out                             ; 18481                ;
+; Total fan-out                               ; 145232               ;
+; Average fan-out                             ; 3.51                 ;
++---------------------------------------------+----------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1140,7 +1071,7 @@ This list only includes the top 50 out of 62 changed assignments
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------------------------------------------+
 ; Name                                                                                                                                                                                                                                ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                                              ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------------------------------------------+
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_sh84:auto_generated|ALTSYNCRAM                               ; AUTO ; Simple Dual Port ; 4096         ; 16           ; 4096         ; 16           ; 65536  ; None                                             ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_i884:auto_generated|ALTSYNCRAM                               ; AUTO ; Simple Dual Port ; 128          ; 6            ; 128          ; 6            ; 768    ; None                                             ;
 ; system_bd:i_system_bd|axi_dmac:axi_adc_dma|axi_dmac_regmap:i_regmap|axi_dmac_regmap_request:i_regmap_request|util_axis_fifo:i_transfer_lenghts_fifo|altsyncram:fifo.sync_clocks.ram_rtl_0|altsyncram_s7p1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 4            ; 26           ; 4            ; 26           ; 104    ; None                                             ;
 ; system_bd:i_system_bd|axi_dmac:axi_adc_dma|axi_dmac_transfer:i_transfer|request_arb:i_request_arb|axi_dmac_burst_memory:i_store_and_forward|ad_mem_asym:i_mem|altsyncram:m_ram_rtl_0|altsyncram_c3q1:auto_generated|ALTSYNCRAM      ; AUTO ; Simple Dual Port ; 16           ; 256          ; 16           ; 256          ; 4096   ; None                                             ;
 ; system_bd:i_system_bd|axi_dmac:video_dmac|axi_dmac_regmap:i_regmap|axi_dmac_regmap_request:i_regmap_request|util_axis_fifo:i_transfer_lenghts_fifo|altsyncram:fifo.sync_clocks.ram_rtl_0|altsyncram_q7p1:auto_generated|ALTSYNCRAM  ; AUTO ; Simple Dual Port ; 4            ; 34           ; 4            ; 34           ; 136    ; None                                             ;
@@ -1171,7 +1102,7 @@ This list only includes the top 50 out of 62 changed assignments
 Info: *******************************************************************
 Info: Running Quartus Prime Partition Merge
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Standard Edition
-    Info: Processing started: Tue Jan 10 14:22:14 2023
+    Info: Processing started: Wed Jan 11 19:01:21 2023
 Info: Command: quartus_cdb --read_settings_files=on --write_settings_files=off dc2677a_c5soc -c dc2677a_c5soc --merge=on --recompile=on
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Warning (114045): Assignment to suppress message # 19527 has no effect.
@@ -1179,25 +1110,25 @@ Info (12849): Using Hybrid (Rapid Recompile) netlist for partition "Top"
 Info (35007): Using synthesis netlist for partition "system_bd_sys_hps_hps_io_border:border" File: /home/guest/jemfgeronimo_workspace/ltc235x_hw_test/projects/dc2677a/c5soc/system_bd/synthesis/submodules/system_bd_sys_hps_hps_io.v Line: 133
 Info (12849): Using Hybrid (Rapid Recompile) netlist for partition "sld_hub:auto_hub"
 Info (12849): Using Hybrid (Rapid Recompile) netlist for partition "sld_signaltap:auto_signaltap_0"
-Info (35024): Successfully connected in-system debug instance "auto_signaltap_0" to all 65 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
+Info (35024): Successfully connected in-system debug instance "auto_signaltap_0" to all 45 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (35002): Resolved and merged 4 partition(s)
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 23 node(s), including 1 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 29810 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 29668 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 34 input pins
     Info (21059): Implemented 86 output pins
     Info (21060): Implemented 58 bidirectional pins
-    Info (21061): Implemented 28873 logic cells
-    Info (21064): Implemented 99 RAM segments
+    Info (21061): Implemented 28736 logic cells
+    Info (21064): Implemented 89 RAM segments
     Info (21066): Implemented 1 delay-locked loops
     Info (21062): Implemented 9 DSP elements
 Warning (114045): Assignment to suppress message # 19527 has no effect.
-Warning (20013): Ignored 1 assignments for entity "altsyncram_eb84" -- entity does not exist in design
-    Warning (20014): Assignment for entity set_global_assignment -name OPTIMIZE_POWER_DURING_SYNTHESIS NORMAL_COMPILATION -entity altsyncram_eb84 -tag quartusii was ignored
+Warning (20013): Ignored 1 assignments for entity "altsyncram_o884" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name OPTIMIZE_POWER_DURING_SYNTHESIS NORMAL_COMPILATION -entity altsyncram_o884 -tag quartusii was ignored
 Info: Quartus Prime Partition Merge was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 1436 megabytes
-    Info: Processing ended: Tue Jan 10 14:22:37 2023
-    Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Peak virtual memory: 1528 megabytes
+    Info: Processing ended: Wed Jan 11 19:01:43 2023
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:17
 
 
