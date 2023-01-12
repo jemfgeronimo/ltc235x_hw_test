@@ -136,6 +136,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "sys_clk",
+					"strict" : false
+				},
+				{
+					"name" : "busy",
+					"strict" : false
+				},
+				{
 					"name" : "gpio_bd_i[0]",
 					"strict" : false
 				},
@@ -168,10 +176,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "sys_clk",
-					"strict" : false
-				},
-				{
 					"name" : "sdo_0",
 					"strict" : false
 				},
@@ -180,11 +184,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "sdo_3",
+					"name" : "sdo_2",
 					"strict" : false
 				},
 				{
-					"name" : "sdo_2",
+					"name" : "sdo_3",
 					"strict" : false
 				},
 				{
@@ -192,19 +196,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "sdo_6",
-					"strict" : false
-				},
-				{
 					"name" : "sdo_5",
 					"strict" : false
 				},
 				{
-					"name" : "sdo_7",
+					"name" : "sdo_6",
 					"strict" : false
 				},
 				{
-					"name" : "busy",
+					"name" : "sdo_7",
 					"strict" : false
 				}
 			]
