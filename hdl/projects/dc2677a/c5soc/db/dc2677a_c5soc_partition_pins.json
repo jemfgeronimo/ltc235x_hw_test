@@ -136,14 +136,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "sys_clk",
-					"strict" : false
-				},
-				{
-					"name" : "busy",
-					"strict" : false
-				},
-				{
 					"name" : "gpio_bd_i[0]",
 					"strict" : false
 				},
@@ -173,6 +165,14 @@
 				},
 				{
 					"name" : "gpio_bd_i[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sys_clk",
+					"strict" : false
+				},
+				{
+					"name" : "busy",
 					"strict" : false
 				},
 				{
