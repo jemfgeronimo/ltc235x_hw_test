@@ -1,5 +1,5 @@
 Flow report for dc2677a_c5soc
-Thu Jan 12 12:48:26 2023
+Thu Jan 12 13:58:12 2023
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Standard Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Thu Jan 12 12:47:30 2023           ;
+; Flow Status                     ; Successful - Thu Jan 12 13:57:17 2023           ;
 ; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Standard Edition ;
 ; Revision Name                   ; dc2677a_c5soc                                   ;
 ; Top-level Entity Name           ; system_top                                      ;
 ; Family                          ; Cyclone V                                       ;
 ; Device                          ; 5CSXFC6D6F31C8ES                                ;
 ; Timing Models                   ; Preliminary                                     ;
-; Logic utilization (in ALMs)     ; 10,550 / 41,910 ( 25 % )                        ;
-; Total registers                 ; 20836                                           ;
+; Logic utilization (in ALMs)     ; 10,551 / 41,910 ( 25 % )                        ;
+; Total registers                 ; 20893                                           ;
 ; Total pins                      ; 174 / 499 ( 35 % )                              ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 601,232 / 5,662,720 ( 11 % )                    ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/12/2023 12:38:18 ;
+; Start date & time ; 01/12/2023 13:48:49 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; dc2677a_c5soc       ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------+----------------------------------------------------------------------------------------+---------------+---------------------------------+------------------+
 ; Assignment Name                       ; Value                                                                                  ; Default Value ; Entity Name                     ; Section Id       ;
 +---------------------------------------+----------------------------------------------------------------------------------------+---------------+---------------------------------+------------------+
-; COMPILER_SIGNATURE_ID                 ; 335034247123.167349829519004                                                           ; --            ; --                              ; --               ;
+; COMPILER_SIGNATURE_ID                 ; 335034247123.167350252613563                                                           ; --            ; --                              ; --               ;
 ; ECO_REGENERATE_REPORT                 ; On                                                                                     ; Off           ; --                              ; --               ;
 ; ENABLE_ADVANCED_IO_TIMING             ; -- (Not supported for targeted family)                                                 ; --            ; --                              ; --               ;
 ; ENABLE_HPS_INTERNAL_TIMING            ; On                                                                                     ; Off           ; --                              ; --               ;
@@ -132,7 +132,7 @@ https://fpgasoftware.intel.com/eula.
 ; SLD_FILE                              ; system_bd/synthesis/system_bd.regmap                                                   ; --            ; --                              ; --               ;
 ; SLD_FILE                              ; system_bd/synthesis/system_bd.debuginfo                                                ; --            ; --                              ; --               ;
 ; SLD_FILE                              ; db/stp1_auto_stripped.stp                                                              ; --            ; --                              ; --               ;
-; SLD_INFO                              ; QSYS_NAME system_bd HAS_SOPCINFO 1 GENERATION_ID 1673496355                            ; --            ; system_bd                       ; --               ;
+; SLD_INFO                              ; QSYS_NAME system_bd HAS_SOPCINFO 1 GENERATION_ID 1673500786                            ; --            ; system_bd                       ; --               ;
 ; SLD_NODE_CREATOR_ID                   ; 110                                                                                    ; --            ; --                              ; auto_signaltap_0 ;
 ; SLD_NODE_ENTITY_NAME                  ; sld_signaltap                                                                          ; --            ; --                              ; auto_signaltap_0 ;
 ; SLD_NODE_PARAMETER_ASSIGNMENT         ; SLD_RAM_BLOCK_TYPE=AUTO                                                                ; --            ; --                              ; auto_signaltap_0 ;
@@ -175,11 +175,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:47     ; 2.1                     ; 1299 MB             ; 00:02:55                           ;
-; Fitter               ; 00:04:19     ; 1.5                     ; 3418 MB             ; 00:11:14                           ;
-; Assembler            ; 00:00:23     ; 1.0                     ; 767 MB              ; 00:00:13                           ;
-; Timing Analyzer      ; 00:00:55     ; 2.2                     ; 2159 MB             ; 00:01:40                           ;
-; Total                ; 00:07:24     ; --                      ; --                  ; 00:16:02                           ;
+; Analysis & Synthesis ; 00:01:37     ; 2.2                     ; 1265 MB             ; 00:02:31                           ;
+; Fitter               ; 00:03:42     ; 1.4                     ; 3413 MB             ; 00:09:07                           ;
+; Assembler            ; 00:00:23     ; 1.0                     ; 769 MB              ; 00:00:13                           ;
+; Timing Analyzer      ; 00:00:53     ; 2.1                     ; 2162 MB             ; 00:01:38                           ;
+; Total                ; 00:06:35     ; --                      ; --                  ; 00:13:29                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
