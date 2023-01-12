@@ -16,9 +16,9 @@
       <single attribute="zoom offset numerator" value="19"/>
       <multi attribute="timebars" size="1" value="3"/>
     </position_info>
-    <signal_set global_temp="1" name="signal_set: 2023/01/12 08:45:40  #0">
+    <signal_set global_temp="1" name="signal_set: 2023/01/12 09:13:20  #0">
       <clock name="sys_clk" polarity="posedge" tap_mode="classic"/>
-      <config is_hps_trigger_out_selected="false" pipeline_level="0" ram_type="AUTO" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="4096" trigger_in_enable="yes" trigger_in_node="cnv" trigger_in_tap_mode="classic" trigger_out_enable="no"/>
+      <config pipeline_level="0" ram_type="AUTO" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="4096" trigger_in_enable="no" trigger_out_enable="no"/>
       <top_entity/>
       <signal_vec>
         <trigger_input_vec>
@@ -71,11 +71,11 @@
           <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="scki" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="2" tap_mode="classic" trigger_index="2" type="unknown"/>
           <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="sdi" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="4" tap_mode="classic" trigger_index="4" type="unknown"/>
         </setup_view>
-        <trigger_in_editor bit_condition="falling edge" is_enabled="true" node_name="cnv"/>
+        <trigger_in_editor bit_condition="falling edge" is_enabled="false" node_name="cnv"/>
         <trigger_out_editor/>
       </presentation>
-      <trigger attribute_mem_mode="false" gap_record="true" global_temp="1" name="trigger: 2023/01/12 08:45:40  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="128" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_in="falling edge" trigger_type="circular">
-        <power_up_trigger position="pre" storage_qualifier_disabled="no" trigger_in="high"/>
+      <trigger attribute_mem_mode="false" gap_record="true" global_temp="1" name="trigger: 2023/01/12 09:13:20  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="128" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
+        <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
         <events use_custom_flow_control="no">
           <level enabled="yes" name="condition1" type="basic">
             <power_up enabled="yes">
