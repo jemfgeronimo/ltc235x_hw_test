@@ -108,7 +108,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "cnv",
+					"name" : "scki",
+					"strict" : false
+				},
+				{
+					"name" : "sdi",
 					"strict" : false
 				},
 				{
@@ -128,15 +132,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "scki",
-					"strict" : false
-				},
-				{
-					"name" : "sdi",
-					"strict" : false
-				},
-				{
-					"name" : "busy",
+					"name" : "cnv",
 					"strict" : false
 				},
 				{
@@ -205,6 +201,10 @@
 				},
 				{
 					"name" : "sdo_7",
+					"strict" : false
+				},
+				{
+					"name" : "busy",
 					"strict" : false
 				}
 			]
