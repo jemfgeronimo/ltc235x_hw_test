@@ -231,7 +231,8 @@ module axi_ltc235x_cmos #(
 
   // capture data per lane in rx buffers adc_lane_X on every edge of scko
   // ignore when busy forced scko to 0
-  always @(scko) begin
+  //always @(scko) begin
+  always @(posedge scki) begin  // TODO: try this fix
     //if (scki != scki_d) begin
     adc_lane_0 <= {adc_lane_0[BW-1:0], db_i[0]};
     adc_lane_1 <= {adc_lane_1[BW-1:0], db_i[1]};

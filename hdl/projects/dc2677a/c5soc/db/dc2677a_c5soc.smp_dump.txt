@@ -58,6 +58,18 @@ dps_current_state.PHASE_DONE_LOW_3 0 0 1 0 0 1
 dps_current_state.PHASE_DONE_LOW_4 0 1 0 0 0 1 
 dps_current_state.PHASE_DONE_LOW_0 1 0 0 0 0 1 
 
+State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:pixel_clk_pll_reconfig_mgmt_avalon_slave_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 
+state.ST_COMP_TRANS 1 0 1 
+state.ST_UNCOMP_TRANS 1 1 0 
+
+State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:axi_adc_dma_s_axi_rd_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 
+state.ST_COMP_TRANS 1 0 1 
+state.ST_UNCOMP_TRANS 1 1 0 
+
 State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:axi_adc_dma_s_axi_wr_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
 Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
 state.ST_IDLE 0 0 0 
@@ -69,34 +81,6 @@ Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS
 state.ST_IDLE 0 0 0 
 state.ST_COMP_TRANS 1 0 1 
 state.ST_UNCOMP_TRANS 1 1 0 
-
-State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:sys_id_control_slave_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
-Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
-state.ST_IDLE 0 0 0 
-state.ST_COMP_TRANS 1 0 1 
-state.ST_UNCOMP_TRANS 1 1 0 
-
-State Machine - |system_top|system_bd:i_system_bd|axi_dmac:axi_adc_dma|axi_dmac_transfer:i_transfer|request_arb:i_request_arb|axi_dmac_response_manager:i_response_manager|state
-Name state.STATE_ZERO_COMPL state.STATE_WRITE_RESPR state.STATE_ACC state.STATE_IDLE state.STATE_WRITE_ZRCMPL 
-state.STATE_IDLE 0 0 0 0 0 
-state.STATE_ACC 0 0 1 1 0 
-state.STATE_WRITE_RESPR 0 1 0 1 0 
-state.STATE_ZERO_COMPL 1 0 0 1 0 
-state.STATE_WRITE_ZRCMPL 0 0 0 1 1 
-
-State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:axi_adc_dma_s_axi_rd_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
-Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
-state.ST_IDLE 0 0 0 
-state.ST_COMP_TRANS 1 0 1 
-state.ST_UNCOMP_TRANS 1 1 0 
-
-State Machine - |system_top|system_bd:i_system_bd|axi_dmac:axi_adc_dma|axi_dmac_transfer:i_transfer|request_arb:i_request_arb|request_generator:i_req_gen|state
-Name state.STATE_CONSUME state.STATE_REWIND_ID state.STATE_GEN_ID state.STATE_IDLE state.STATE_WAIT_LAST 
-state.STATE_IDLE 0 0 0 0 0 
-state.STATE_GEN_ID 0 0 1 1 0 
-state.STATE_REWIND_ID 0 1 0 1 0 
-state.STATE_CONSUME 1 0 0 1 0 
-state.STATE_WAIT_LAST 0 0 0 1 1 
 
 State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:sys_gpio_out_s1_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
 Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
@@ -116,6 +100,22 @@ state.ST_IDLE 0 0 0
 state.ST_COMP_TRANS 1 0 1 
 state.ST_UNCOMP_TRANS 1 1 0 
 
+State Machine - |system_top|system_bd:i_system_bd|axi_dmac:axi_adc_dma|axi_dmac_transfer:i_transfer|request_arb:i_request_arb|axi_dmac_response_manager:i_response_manager|state
+Name state.STATE_ZERO_COMPL state.STATE_WRITE_RESPR state.STATE_ACC state.STATE_IDLE state.STATE_WRITE_ZRCMPL 
+state.STATE_IDLE 0 0 0 0 0 
+state.STATE_ACC 0 0 1 1 0 
+state.STATE_WRITE_RESPR 0 1 0 1 0 
+state.STATE_ZERO_COMPL 1 0 0 1 0 
+state.STATE_WRITE_ZRCMPL 0 0 0 1 1 
+
+State Machine - |system_top|system_bd:i_system_bd|axi_dmac:axi_adc_dma|axi_dmac_transfer:i_transfer|request_arb:i_request_arb|request_generator:i_req_gen|state
+Name state.STATE_CONSUME state.STATE_REWIND_ID state.STATE_GEN_ID state.STATE_IDLE state.STATE_WAIT_LAST 
+state.STATE_IDLE 0 0 0 0 0 
+state.STATE_GEN_ID 0 0 1 1 0 
+state.STATE_REWIND_ID 0 1 0 1 0 
+state.STATE_CONSUME 1 0 0 1 0 
+state.STATE_WAIT_LAST 0 0 0 1 1 
+
 State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:adc_pwm_gen_s_axi_rd_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
 Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
 state.ST_IDLE 0 0 0 
@@ -123,30 +123,6 @@ state.ST_COMP_TRANS 1 0 1
 state.ST_UNCOMP_TRANS 1 1 0 
 
 State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:axi_ltc235x_s_axi_rd_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
-Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
-state.ST_IDLE 0 0 0 
-state.ST_COMP_TRANS 1 0 1 
-state.ST_UNCOMP_TRANS 1 1 0 
-
-State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:vga_out_s_axi_rd_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
-Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
-state.ST_IDLE 0 0 0 
-state.ST_COMP_TRANS 1 0 1 
-state.ST_UNCOMP_TRANS 1 1 0 
-
-State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:video_dmac_s_axi_rd_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
-Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
-state.ST_IDLE 0 0 0 
-state.ST_COMP_TRANS 1 0 1 
-state.ST_UNCOMP_TRANS 1 1 0 
-
-State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:pixel_clk_pll_reconfig_mgmt_avalon_slave_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
-Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
-state.ST_IDLE 0 0 0 
-state.ST_COMP_TRANS 1 0 1 
-state.ST_UNCOMP_TRANS 1 1 0 
-
-State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:axi_sysid_0_s_axi_rd_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
 Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
 state.ST_IDLE 0 0 0 
 state.ST_COMP_TRANS 1 0 1 
@@ -168,13 +144,31 @@ state.STATE_REWIND_ID 0 1 0 1 0
 state.STATE_CONSUME 1 0 0 1 0 
 state.STATE_WAIT_LAST 0 0 0 1 1 
 
-State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:sys_int_mem_s1_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
+State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:vga_out_s_axi_rd_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 
+state.ST_COMP_TRANS 1 0 1 
+state.ST_UNCOMP_TRANS 1 1 0 
+
+State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:video_dmac_s_axi_rd_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
 Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
 state.ST_IDLE 0 0 0 
 state.ST_COMP_TRANS 1 0 1 
 state.ST_UNCOMP_TRANS 1 1 0 
 
 State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:adc_pwm_gen_s_axi_wr_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 
+state.ST_COMP_TRANS 1 0 1 
+state.ST_UNCOMP_TRANS 1 1 0 
+
+State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:video_dmac_s_axi_wr_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 
+state.ST_COMP_TRANS 1 0 1 
+state.ST_UNCOMP_TRANS 1 1 0 
+
+State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:axi_sysid_0_s_axi_wr_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
 Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
 state.ST_IDLE 0 0 0 
 state.ST_COMP_TRANS 1 0 1 
@@ -192,13 +186,19 @@ state.ST_IDLE 0 0 0
 state.ST_COMP_TRANS 1 0 1 
 state.ST_UNCOMP_TRANS 1 1 0 
 
-State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:video_dmac_s_axi_wr_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
+State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:sys_id_control_slave_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
 Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
 state.ST_IDLE 0 0 0 
 state.ST_COMP_TRANS 1 0 1 
 state.ST_UNCOMP_TRANS 1 1 0 
 
-State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:axi_sysid_0_s_axi_wr_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
+State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:axi_sysid_0_s_axi_rd_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 
+state.ST_COMP_TRANS 1 0 1 
+state.ST_UNCOMP_TRANS 1 1 0 
+
+State Machine - |system_top|system_bd:i_system_bd|system_bd_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:sys_int_mem_s1_burst_adapter|altera_merlin_burst_adapter_new:altera_merlin_burst_adapter_new.burst_adapter|state
 Name state.ST_IDLE state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
 state.ST_IDLE 0 0 0 
 state.ST_COMP_TRANS 1 0 1 
