@@ -108,15 +108,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "cnv",
-					"strict" : false
-				},
-				{
 					"name" : "scki",
 					"strict" : false
 				},
 				{
 					"name" : "sdi",
+					"strict" : false
+				},
+				{
+					"name" : "cnv",
 					"strict" : false
 				},
 				{
@@ -136,10 +136,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "sys_clk",
-					"strict" : false
-				},
-				{
 					"name" : "gpio_bd_i[0]",
 					"strict" : false
 				},
@@ -152,10 +148,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "gpio_bd_i[5]",
-					"strict" : false
-				},
-				{
 					"name" : "gpio_bd_i[3]",
 					"strict" : false
 				},
@@ -164,11 +156,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "gpio_bd_i[5]",
+					"strict" : false
+				},
+				{
 					"name" : "gpio_bd_i[6]",
 					"strict" : false
 				},
 				{
 					"name" : "gpio_bd_i[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sys_clk",
 					"strict" : false
 				},
 				{
