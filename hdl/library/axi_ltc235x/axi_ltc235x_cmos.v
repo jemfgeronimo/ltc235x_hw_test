@@ -73,6 +73,15 @@ module axi_ltc235x_cmos #(
   output      [31:0]      adc_data_5,
   output      [31:0]      adc_data_6,
   output      [31:0]      adc_data_7,
+  
+  output      [ 2:0]      adc_softspan_0,
+  output      [ 2:0]      adc_softspan_1,
+  output      [ 2:0]      adc_softspan_2,
+  output      [ 2:0]      adc_softspan_3,
+  output      [ 2:0]      adc_softspan_4,
+  output      [ 2:0]      adc_softspan_5,
+  output      [ 2:0]      adc_softspan_6,
+  output      [ 2:0]      adc_softspan_7,
 
   output reg              adc_valid
 );
@@ -177,6 +186,7 @@ module axi_ltc235x_cmos #(
 
   wire                scko_n;
 
+  /*
   wire        [ 2:0]      adc_softspan_0;
   wire        [ 2:0]      adc_softspan_1;
   wire        [ 2:0]      adc_softspan_2;
@@ -185,6 +195,7 @@ module axi_ltc235x_cmos #(
   wire        [ 2:0]      adc_softspan_5;
   wire        [ 2:0]      adc_softspan_6;
   wire        [ 2:0]      adc_softspan_7;
+  */
 
   ////////////////////////////////////////////////////// SCKI
 
@@ -264,7 +275,6 @@ module axi_ltc235x_cmos #(
 
   // capture data per lane in rx buffers adc_lane_X on every edge of scko
   // ignore when busy forced scko to 0
-  assign scko_n = ~scko;
   /*always @(posedge scko) begin
     adc_lane_0_even <= {adc_lane_0_even[BW-1:0], db_i[0]};
     adc_lane_1_even <= {adc_lane_1_even[BW-1:0], db_i[1]};
@@ -287,10 +297,11 @@ module axi_ltc235x_cmos #(
     adc_lane_7_odd <= {adc_lane_7_odd[BW-1:0], db_i[7]};
     //end
   end*/
+  //assign scko_n = ~scko;
   always @(posedge scko) begin
     db_i_d <= db_i;
   end
-  always @(posedge scko_n) begin
+  always @(negedge scko) begin
     //if (scki != scki_d) begin
     adc_lane_0 <= {adc_lane_0[BW-2:0], db_i_d[0], db_i[0]};
     adc_lane_1 <= {adc_lane_1[BW-2:0], db_i_d[1], db_i[1]};
