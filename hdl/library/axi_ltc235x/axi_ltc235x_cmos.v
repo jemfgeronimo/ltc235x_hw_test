@@ -79,6 +79,8 @@ module axi_ltc235x_cmos #(
 
   localparam DW = 24;     // packet size
   localparam BW = DW - 1;
+//  localparam DW_half = DW / 2;
+//  localparam BW_half = DW_half - 1;
 
   // internal registers
 
@@ -91,6 +93,26 @@ module axi_ltc235x_cmos #(
 
   reg                 scki_i;
   reg                 scki_d;
+
+  /*
+  reg         [BW_half:0]  adc_lane_0_even;
+  reg         [BW_half:0]  adc_lane_1_even;
+  reg         [BW_half:0]  adc_lane_2_even;
+  reg         [BW_half:0]  adc_lane_3_even;
+  reg         [BW_half:0]  adc_lane_4_even;
+  reg         [BW_half:0]  adc_lane_5_even;
+  reg         [BW_half:0]  adc_lane_6_even;
+  reg         [BW_half:0]  adc_lane_7_even;
+  reg         [BW_half:0]  adc_lane_0_odd;
+  reg         [BW_half:0]  adc_lane_1_odd;
+  reg         [BW_half:0]  adc_lane_2_odd;
+  reg         [BW_half:0]  adc_lane_3_odd;
+  reg         [BW_half:0]  adc_lane_4_odd;
+  reg         [BW_half:0]  adc_lane_5_odd;
+  reg         [BW_half:0]  adc_lane_6_odd;
+  reg         [BW_half:0]  adc_lane_7_odd;
+  */
+  reg         [ 7:0]  db_i_d;
 
   reg         [BW:0]  adc_lane_0;
   reg         [BW:0]  adc_lane_1;
@@ -154,6 +176,15 @@ module axi_ltc235x_cmos #(
   wire        [ 2:0]  adc_softspan [7:0];
 
   wire                scko_n;
+
+  wire        [ 2:0]      adc_softspan_0;
+  wire        [ 2:0]      adc_softspan_1;
+  wire        [ 2:0]      adc_softspan_2;
+  wire        [ 2:0]      adc_softspan_3;
+  wire        [ 2:0]      adc_softspan_4;
+  wire        [ 2:0]      adc_softspan_5;
+  wire        [ 2:0]      adc_softspan_6;
+  wire        [ 2:0]      adc_softspan_7;
 
   ////////////////////////////////////////////////////// SCKI
 
@@ -234,16 +265,44 @@ module axi_ltc235x_cmos #(
   // capture data per lane in rx buffers adc_lane_X on every edge of scko
   // ignore when busy forced scko to 0
   assign scko_n = ~scko;
-  always @(posedge scki) begin
-    adc_lane_0 <= {adc_lane_0[BW-1:0], db_i[0]};
-    adc_lane_1 <= {adc_lane_1[BW-1:0], db_i[1]};
-    adc_lane_2 <= {adc_lane_2[BW-1:0], db_i[2]};
-    adc_lane_3 <= {adc_lane_3[BW-1:0], db_i[3]};
-    adc_lane_4 <= {adc_lane_4[BW-1:0], db_i[4]};
-    adc_lane_5 <= {adc_lane_5[BW-1:0], db_i[5]};
-    adc_lane_6 <= {adc_lane_6[BW-1:0], db_i[6]};
-    adc_lane_7 <= {adc_lane_7[BW-1:0], db_i[7]};
+  /*always @(posedge scko) begin
+    adc_lane_0_even <= {adc_lane_0_even[BW-1:0], db_i[0]};
+    adc_lane_1_even <= {adc_lane_1_even[BW-1:0], db_i[1]};
+    adc_lane_2_even <= {adc_lane_2_even[BW-1:0], db_i[2]};
+    adc_lane_3_even <= {adc_lane_3_even[BW-1:0], db_i[3]};
+    adc_lane_4_even <= {adc_lane_4_even[BW-1:0], db_i[4]};
+    adc_lane_5_even <= {adc_lane_5_even[BW-1:0], db_i[5]};
+    adc_lane_6_even <= {adc_lane_6_even[BW-1:0], db_i[6]};
+    adc_lane_7_even <= {adc_lane_7_even[BW-1:0], db_i[7]};
   end
+  always @(negedge scko) begin
+    //if (scki != scki_d) begin
+    adc_lane_0_odd <= {adc_lane_0_odd[BW-1:0], db_i[0]};
+    adc_lane_1_odd <= {adc_lane_1_odd[BW-1:0], db_i[1]};
+    adc_lane_2_odd <= {adc_lane_2_odd[BW-1:0], db_i[2]};
+    adc_lane_3_odd <= {adc_lane_3_odd[BW-1:0], db_i[3]};
+    adc_lane_4_odd <= {adc_lane_4_odd[BW-1:0], db_i[4]};
+    adc_lane_5_odd <= {adc_lane_5_odd[BW-1:0], db_i[5]};
+    adc_lane_6_odd <= {adc_lane_6_odd[BW-1:0], db_i[6]};
+    adc_lane_7_odd <= {adc_lane_7_odd[BW-1:0], db_i[7]};
+    //end
+  end*/
+  always @(posedge scko) begin
+    db_i_d <= db_i;
+  end
+  always @(posedge scko_n) begin
+    //if (scki != scki_d) begin
+    adc_lane_0 <= {adc_lane_0[BW-2:0], db_i_d[0], db_i[0]};
+    adc_lane_1 <= {adc_lane_1[BW-2:0], db_i_d[1], db_i[1]};
+    adc_lane_2 <= {adc_lane_2[BW-2:0], db_i_d[2], db_i[2]};
+    adc_lane_3 <= {adc_lane_3[BW-2:0], db_i_d[3], db_i[3]};
+    adc_lane_4 <= {adc_lane_4[BW-2:0], db_i_d[4], db_i[4]};
+    adc_lane_5 <= {adc_lane_5[BW-2:0], db_i_d[5], db_i[5]};
+    adc_lane_6 <= {adc_lane_6[BW-2:0], db_i_d[6], db_i[6]};
+    adc_lane_7 <= {adc_lane_7[BW-2:0], db_i_d[7], db_i[7]};
+    //end
+  end
+  
 
   // store the data from the rx buffers when all bits are received
   // when data transaction window is done
@@ -262,7 +321,15 @@ module axi_ltc235x_cmos #(
     end else begin
       data_counter <= scki_counter;
       if (data_counter == DW) begin
-        adc_data_init[0] <= adc_lane_0;
+        /*adc_data_init[0] <= {adc_lane_0_even[11], adc_lane_0_odd[11], adc_lane_0_even[10], 
+                            adc_lane_0_odd[10], adc_lane_0_even[11], adc_lane_0_odd[11], 
+                            adc_lane_0_even[11], adc_lane_0_odd[11], adc_lane_0_even[11], 
+                            adc_lane_0_odd[11], adc_lane_0_even[11], adc_lane_0_odd[11], 
+                            adc_lane_0_even[11], adc_lane_0_odd[11], adc_lane_0_even[11], 
+                            adc_lane_0_odd[11], adc_lane_0_even[11], adc_lane_0_odd[11], 
+                            adc_lane_0_even[11], adc_lane_0_odd[11], adc_lane_0_even[11], 
+                            adc_lane_0_odd[11], adc_lane_0_even[11], adc_lane_0_odd[11]}; */
+        adc_data_init[0] <= adc_lane_0;                    
         adc_data_init[1] <= adc_lane_1;
         adc_data_init[2] <= adc_lane_2;
         adc_data_init[3] <= adc_lane_3;
@@ -427,6 +494,16 @@ module axi_ltc235x_cmos #(
   assign adc_ch5_id = adc_ch_id_s[5];
   assign adc_ch6_id = adc_ch_id_s[6];
   assign adc_ch7_id = adc_ch_id_s[7];
+
+  // assign extracted adc softspan to corresponding outputs
+  assign adc_softspan_0 = adc_softspan[0];
+  assign adc_softspan_1 = adc_softspan[1];
+  assign adc_softspan_2 = adc_softspan[2];
+  assign adc_softspan_3 = adc_softspan[3];
+  assign adc_softspan_4 = adc_softspan[4];
+  assign adc_softspan_5 = adc_softspan[5];
+  assign adc_softspan_6 = adc_softspan[6];
+  assign adc_softspan_7 = adc_softspan[7];
 
 //////////////////////////////////////////////////////////// VALID SIGNAL
 
