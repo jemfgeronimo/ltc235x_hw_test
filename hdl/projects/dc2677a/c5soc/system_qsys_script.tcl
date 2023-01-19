@@ -1,6 +1,6 @@
 set project_name dc2677a_c5soc
 set mmu_enabled 1
-set ad_hdl_dir C:/Users/JGeroni2/Documents/jemfgeronimo_hdl/hdl
+set ad_hdl_dir /home/guest/jemfgeronimo_workspace/ltc235x_hw_test/hdl
 package require qsys
 set_module_property NAME {system_bd}
 set_project_property DEVICE_FAMILY {Cyclone V}

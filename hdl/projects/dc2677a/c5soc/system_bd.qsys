@@ -542,7 +542,7 @@
   <parameter name="device_family" value="Cyclone V" />
  </module>
  <module name="rom_sys_0" kind="sysid_rom" version="1.0" enabled="1">
-  <parameter name="PATH_TO_FILE">C:/Users/JGeroni2/Documents/ltc235x_hw_test/hdl/projects/dc2677a/c5soc/mem_init_sys.txt</parameter>
+  <parameter name="PATH_TO_FILE">/home/guest/jemfgeronimo_workspace/ltc235x_hw_test/hdl/projects/dc2677a/c5soc/mem_init_sys.txt</parameter>
   <parameter name="ROM_ADDR_BITS" value="9" />
   <parameter name="ROM_WIDTH" value="32" />
  </module>
