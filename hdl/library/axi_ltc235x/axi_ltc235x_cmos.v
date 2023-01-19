@@ -286,32 +286,32 @@ module axi_ltc235x_cmos #(
     adc_lane_7_even <= {adc_lane_7_even[BW-1:0], db_i[7]};
   end
   always @(negedge scko) begin
-    //if (scki != scki_d) begin
-    adc_lane_0_odd <= {adc_lane_0_odd[BW-1:0], db_i[0]};
-    adc_lane_1_odd <= {adc_lane_1_odd[BW-1:0], db_i[1]};
-    adc_lane_2_odd <= {adc_lane_2_odd[BW-1:0], db_i[2]};
-    adc_lane_3_odd <= {adc_lane_3_odd[BW-1:0], db_i[3]};
-    adc_lane_4_odd <= {adc_lane_4_odd[BW-1:0], db_i[4]};
-    adc_lane_5_odd <= {adc_lane_5_odd[BW-1:0], db_i[5]};
-    adc_lane_6_odd <= {adc_lane_6_odd[BW-1:0], db_i[6]};
-    adc_lane_7_odd <= {adc_lane_7_odd[BW-1:0], db_i[7]};
-    //end
+    if (scki != scki_d) begin
+      adc_lane_0_odd <= {adc_lane_0_odd[BW-1:0], db_i[0]};
+      adc_lane_1_odd <= {adc_lane_1_odd[BW-1:0], db_i[1]};
+      adc_lane_2_odd <= {adc_lane_2_odd[BW-1:0], db_i[2]};
+      adc_lane_3_odd <= {adc_lane_3_odd[BW-1:0], db_i[3]};
+      adc_lane_4_odd <= {adc_lane_4_odd[BW-1:0], db_i[4]};
+      adc_lane_5_odd <= {adc_lane_5_odd[BW-1:0], db_i[5]};
+      adc_lane_6_odd <= {adc_lane_6_odd[BW-1:0], db_i[6]};
+      adc_lane_7_odd <= {adc_lane_7_odd[BW-1:0], db_i[7]};
+    end
   end*/
   //assign scko_n = ~scko;
   always @(posedge scko) begin
     db_i_d <= db_i;
   end
   always @(negedge scko) begin
-    //if (scki != scki_d) begin
-    adc_lane_0 <= {adc_lane_0[BW-2:0], db_i_d[0], db_i[0]};
-    adc_lane_1 <= {adc_lane_1[BW-2:0], db_i_d[1], db_i[1]};
-    adc_lane_2 <= {adc_lane_2[BW-2:0], db_i_d[2], db_i[2]};
-    adc_lane_3 <= {adc_lane_3[BW-2:0], db_i_d[3], db_i[3]};
-    adc_lane_4 <= {adc_lane_4[BW-2:0], db_i_d[4], db_i[4]};
-    adc_lane_5 <= {adc_lane_5[BW-2:0], db_i_d[5], db_i[5]};
-    adc_lane_6 <= {adc_lane_6[BW-2:0], db_i_d[6], db_i[6]};
-    adc_lane_7 <= {adc_lane_7[BW-2:0], db_i_d[7], db_i[7]};
-    //end
+    if (scki != scki_d) begin
+      adc_lane_0 <= {adc_lane_0[BW-2:0], db_i_d[0], db_i[0]};
+      adc_lane_1 <= {adc_lane_1[BW-2:0], db_i_d[1], db_i[1]};
+      adc_lane_2 <= {adc_lane_2[BW-2:0], db_i_d[2], db_i[2]};
+      adc_lane_3 <= {adc_lane_3[BW-2:0], db_i_d[3], db_i[3]};
+      adc_lane_4 <= {adc_lane_4[BW-2:0], db_i_d[4], db_i[4]};
+      adc_lane_5 <= {adc_lane_5[BW-2:0], db_i_d[5], db_i[5]};
+      adc_lane_6 <= {adc_lane_6[BW-2:0], db_i_d[6], db_i[6]};
+      adc_lane_7 <= {adc_lane_7[BW-2:0], db_i_d[7], db_i[7]};
+    end
   end
   
 
