@@ -96,6 +96,7 @@ module axi_ltc235x_cmos #(
   reg                 busy_m1;
   reg                 busy_m2;
   reg                 busy_m3;
+  reg                 busy_m4;
 
   reg         [ 4:0]  scki_counter = 5'h0;
   reg         [ 4:0]  data_counter = 5'h0;
@@ -203,14 +204,17 @@ module axi_ltc235x_cmos #(
     if (rst == 1'b1) begin
       busy_m1 <= 1'b0;
       busy_m2 <= 1'b0;
+      busy_m3 <= 1'b0;
+      busy_m4 <= 1'b0;
     end else begin
       busy_m1 <= busy;
       busy_m2 <= busy_m1;
       busy_m3 <= busy_m2;
+      busy_m4 <= busy_m3;
     end
   end
 
-  assign start_transfer_s = busy_m3 & ~busy_m2;
+  assign start_transfer_s = busy_m4 & ~busy_m3;
 
   // reading clock logic
   always @(posedge clk) begin
