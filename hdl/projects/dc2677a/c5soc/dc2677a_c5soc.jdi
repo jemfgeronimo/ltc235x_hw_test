@@ -1,0 +1,16 @@
+<sld_project_info>
+  <project>
+    <hash md5_digest_80b="e3b6f0a363f830b77c6e"/>
+  </project>
+  <file_info>
+    <file device="5CSXFC6D6F31C8ES" path="dc2677a_c5soc.sof" usercode="0xFFFFFFFF"/>
+  </file_info>
+  <sld_infos>
+    <sld_info hpath="system_bd:i_system_bd" name="i_system_bd">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME system_bd HAS_SOPCINFO 1 GENERATION_ID 1674039637"/>
+      </assignment_values>
+      <parameters/>
+    </sld_info>
+  </sld_infos>
+</sld_project_info>
