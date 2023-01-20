@@ -132,6 +132,15 @@ module axi_ltc235x_cmos #(
   reg         [BW:0]  adc_lane_5;
   reg         [BW:0]  adc_lane_6;
   reg         [BW:0]  adc_lane_7;
+  
+  reg         [BW:0]  adc_lane_0_debug;
+  reg         [BW:0]  adc_lane_1_debug;
+  reg         [BW:0]  adc_lane_2_debug;
+  reg         [BW:0]  adc_lane_3_debug;
+  reg         [BW:0]  adc_lane_4_debug;
+  reg         [BW:0]  adc_lane_5_debug;
+  reg         [BW:0]  adc_lane_6_debug;
+  reg         [BW:0]  adc_lane_7_debug;
 
   reg         [BW:0]  adc_data_init[7:0];
   reg         [BW:0]  adc_data_store[7:0];
@@ -317,16 +326,9 @@ module axi_ltc235x_cmos #(
       adc_lane_7 <= {adc_lane_7[BW-2:0], db_i_d[7], db_i[7]};
     end
   end
-  reg         [BW:0]  adc_lane_0_debug;
-  reg         [BW:0]  adc_lane_1_debug;
-  reg         [BW:0]  adc_lane_2_debug;
-  reg         [BW:0]  adc_lane_3_debug;
-  reg         [BW:0]  adc_lane_4_debug;
-  reg         [BW:0]  adc_lane_5_debug;
-  reg         [BW:0]  adc_lane_6_debug;
-  reg         [BW:0]  adc_lane_7_debug;
+
   always @(posedge scki) begin
-    if (scki != scki_d) begin
+    //if (scki != scki_d) begin
       adc_lane_0_debug <= {adc_lane_0_debug[BW-1:0], db_i[0]};
       adc_lane_1_debug <= {adc_lane_1_debug[BW-1:0], db_i[1]};
       adc_lane_2_debug <= {adc_lane_2_debug[BW-1:0], db_i[2]};
@@ -335,7 +337,7 @@ module axi_ltc235x_cmos #(
       adc_lane_5_debug <= {adc_lane_5_debug[BW-1:0], db_i[5]};
       adc_lane_6_debug <= {adc_lane_6_debug[BW-1:0], db_i[6]};
       adc_lane_7_debug <= {adc_lane_7_debug[BW-1:0], db_i[7]};
-    end
+    //end
   end
   
 
