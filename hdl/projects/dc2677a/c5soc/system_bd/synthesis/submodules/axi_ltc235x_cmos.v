@@ -133,6 +133,7 @@ module axi_ltc235x_cmos #(
   reg         [BW:0]  adc_lane_6;
   reg         [BW:0]  adc_lane_7;
   
+  /*
   reg         [BW:0]  adc_lane_0_debug;
   reg         [BW:0]  adc_lane_1_debug;
   reg         [BW:0]  adc_lane_2_debug;
@@ -141,7 +142,7 @@ module axi_ltc235x_cmos #(
   reg         [BW:0]  adc_lane_5_debug;
   reg         [BW:0]  adc_lane_6_debug;
   reg         [BW:0]  adc_lane_7_debug;
-
+*/
   reg         [BW:0]  adc_data_init[7:0];
   reg         [BW:0]  adc_data_store[7:0];
 
@@ -311,6 +312,7 @@ module axi_ltc235x_cmos #(
     end
   end*/
   //assign scko_n = ~scko;
+  /*
   always @(posedge scko) begin
     db_i_d <= db_i;
   end
@@ -326,7 +328,8 @@ module axi_ltc235x_cmos #(
       adc_lane_7 <= {adc_lane_7[BW-2:0], db_i_d[7], db_i[7]};
     end
   end
-
+  */
+/*
   always @(posedge scki) begin
     //if (scki != scki_d) begin
       adc_lane_0_debug <= {adc_lane_0_debug[BW-1:0], db_i[0]};
@@ -339,7 +342,19 @@ module axi_ltc235x_cmos #(
       adc_lane_7_debug <= {adc_lane_7_debug[BW-1:0], db_i[7]};
     //end
   end
-  
+ */ 
+  always @(posedge scki) begin
+    //if (scki != scki_d) begin
+      adc_lane_0 <= {adc_lane_0[BW-1:0], db_i[0]};
+      adc_lane_1 <= {adc_lane_1[BW-1:0], db_i[1]};
+      adc_lane_2 <= {adc_lane_2[BW-1:0], db_i[2]};
+      adc_lane_3 <= {adc_lane_3[BW-1:0], db_i[3]};
+      adc_lane_4 <= {adc_lane_4[BW-1:0], db_i[4]};
+      adc_lane_5 <= {adc_lane_5[BW-1:0], db_i[5]};
+      adc_lane_6 <= {adc_lane_6[BW-1:0], db_i[6]};
+      adc_lane_7 <= {adc_lane_7[BW-1:0], db_i[7]};
+    //end
+  end
 
   // store the data from the rx buffers when all bits are received
   // when data transaction window is done
