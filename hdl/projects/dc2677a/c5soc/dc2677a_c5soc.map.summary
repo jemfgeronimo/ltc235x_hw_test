@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Thu Jan 19 15:28:39 2023
+Analysis & Synthesis Status : Successful - Fri Jan 20 09:50:08 2023
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Standard Edition
 Revision Name : dc2677a_c5soc
 Top-level Entity Name : system_top
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 20319
+Total registers : 20315
 Total pins : 174
 Total virtual pins : 0
 Total block memory bits : 576,656

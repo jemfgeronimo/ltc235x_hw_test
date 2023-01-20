@@ -19,7 +19,7 @@
 #
 # Quartus Prime
 # Version 21.1.0 Build 842 10/21/2021 SJ Standard Edition
-# Date created = 15:20:17  January 19, 2023
+# Date created = 09:42:27  January 20, 2023
 #
 # -------------------------------------------------------------------------- #
 #
@@ -41,7 +41,7 @@ set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSXFC6D6F31C8ES
 set_global_assignment -name TOP_LEVEL_ENTITY system_top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 21.1.0
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:20:17  JANUARY 19, 2023"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:42:27  JANUARY 20, 2023"
 set_global_assignment -name LAST_QUARTUS_VERSION "21.1.0 Standard Edition"
 set_global_assignment -name IP_SEARCH_PATHS /home/guest/jemfgeronimo_workspace/ltc235x_hw_test/hdl/library/**/*
 set_global_assignment -name ENABLE_ADVANCED_IO_TIMING ON
