@@ -204,6 +204,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "scko",
+					"strict" : false
+				},
+				{
 					"name" : "busy",
 					"strict" : false
 				}
