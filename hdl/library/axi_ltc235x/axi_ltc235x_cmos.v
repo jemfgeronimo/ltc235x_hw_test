@@ -88,8 +88,6 @@ module axi_ltc235x_cmos #(
 
   localparam DW = 24;     // packet size
   localparam BW = DW - 1;
-//  localparam DW_half = DW / 2;
-//  localparam BW_half = DW_half - 1;
 
   // internal registers
 
@@ -104,26 +102,6 @@ module axi_ltc235x_cmos #(
   reg                 scki_i;
   reg                 scki_d;
 
-  /*
-  reg         [BW_half:0]  adc_lane_0_even;
-  reg         [BW_half:0]  adc_lane_1_even;
-  reg         [BW_half:0]  adc_lane_2_even;
-  reg         [BW_half:0]  adc_lane_3_even;
-  reg         [BW_half:0]  adc_lane_4_even;
-  reg         [BW_half:0]  adc_lane_5_even;
-  reg         [BW_half:0]  adc_lane_6_even;
-  reg         [BW_half:0]  adc_lane_7_even;
-  reg         [BW_half:0]  adc_lane_0_odd;
-  reg         [BW_half:0]  adc_lane_1_odd;
-  reg         [BW_half:0]  adc_lane_2_odd;
-  reg         [BW_half:0]  adc_lane_3_odd;
-  reg         [BW_half:0]  adc_lane_4_odd;
-  reg         [BW_half:0]  adc_lane_5_odd;
-  reg         [BW_half:0]  adc_lane_6_odd;
-  reg         [BW_half:0]  adc_lane_7_odd;
-  */
-  reg         [ 7:0]  db_i_d;
-
   reg         [BW:0]  adc_lane_0;
   reg         [BW:0]  adc_lane_1;
   reg         [BW:0]  adc_lane_2;
@@ -132,17 +110,7 @@ module axi_ltc235x_cmos #(
   reg         [BW:0]  adc_lane_5;
   reg         [BW:0]  adc_lane_6;
   reg         [BW:0]  adc_lane_7;
-  
-  /*
-  reg         [BW:0]  adc_lane_0_debug;
-  reg         [BW:0]  adc_lane_1_debug;
-  reg         [BW:0]  adc_lane_2_debug;
-  reg         [BW:0]  adc_lane_3_debug;
-  reg         [BW:0]  adc_lane_4_debug;
-  reg         [BW:0]  adc_lane_5_debug;
-  reg         [BW:0]  adc_lane_6_debug;
-  reg         [BW:0]  adc_lane_7_debug;
-*/
+
   reg         [BW:0]  adc_data_init[7:0];
   reg         [BW:0]  adc_data_store[7:0];
 
@@ -195,8 +163,6 @@ module axi_ltc235x_cmos #(
   wire        [ 2:0]  adc_ch_id_s [7:0];
   wire        [ 2:0]  adc_softspan [7:0];
 
-  wire                scko_n;
-
   /*
   wire        [ 2:0]      adc_softspan_0;
   wire        [ 2:0]      adc_softspan_1;
@@ -224,7 +190,7 @@ module axi_ltc235x_cmos #(
     end
   end
 
-  assign start_transfer_s = busy_m4 & ~busy_m3;
+  assign start_transfer_s = busy_m3 & ~busy_m2;
 
   // reading clock logic
   always @(posedge clk) begin
@@ -289,75 +255,8 @@ module axi_ltc235x_cmos #(
 
   // capture data per lane in rx buffers adc_lane_X on every edge of scko
   // ignore when busy forced scko to 0
-  /*always @(posedge scko) begin
-    adc_lane_0_even <= {adc_lane_0_even[BW-1:0], db_i[0]};
-    adc_lane_1_even <= {adc_lane_1_even[BW-1:0], db_i[1]};
-    adc_lane_2_even <= {adc_lane_2_even[BW-1:0], db_i[2]};
-    adc_lane_3_even <= {adc_lane_3_even[BW-1:0], db_i[3]};
-    adc_lane_4_even <= {adc_lane_4_even[BW-1:0], db_i[4]};
-    adc_lane_5_even <= {adc_lane_5_even[BW-1:0], db_i[5]};
-    adc_lane_6_even <= {adc_lane_6_even[BW-1:0], db_i[6]};
-    adc_lane_7_even <= {adc_lane_7_even[BW-1:0], db_i[7]};
-  end
-  always @(negedge scko) begin
-    if (scki != scki_d) begin
-      adc_lane_0_odd <= {adc_lane_0_odd[BW-1:0], db_i[0]};
-      adc_lane_1_odd <= {adc_lane_1_odd[BW-1:0], db_i[1]};
-      adc_lane_2_odd <= {adc_lane_2_odd[BW-1:0], db_i[2]};
-      adc_lane_3_odd <= {adc_lane_3_odd[BW-1:0], db_i[3]};
-      adc_lane_4_odd <= {adc_lane_4_odd[BW-1:0], db_i[4]};
-      adc_lane_5_odd <= {adc_lane_5_odd[BW-1:0], db_i[5]};
-      adc_lane_6_odd <= {adc_lane_6_odd[BW-1:0], db_i[6]};
-      adc_lane_7_odd <= {adc_lane_7_odd[BW-1:0], db_i[7]};
-    end
-  end*/
-  //assign scko_n = ~scko;
-  /*
-  always @(posedge scko) begin
-    db_i_d <= db_i;
-  end
-  always @(negedge scko) begin
-    if (scki != scki_d) begin
-      adc_lane_0 <= {adc_lane_0[BW-2:0], db_i_d[0], db_i[0]};
-      adc_lane_1 <= {adc_lane_1[BW-2:0], db_i_d[1], db_i[1]};
-      adc_lane_2 <= {adc_lane_2[BW-2:0], db_i_d[2], db_i[2]};
-      adc_lane_3 <= {adc_lane_3[BW-2:0], db_i_d[3], db_i[3]};
-      adc_lane_4 <= {adc_lane_4[BW-2:0], db_i_d[4], db_i[4]};
-      adc_lane_5 <= {adc_lane_5[BW-2:0], db_i_d[5], db_i[5]};
-      adc_lane_6 <= {adc_lane_6[BW-2:0], db_i_d[6], db_i[6]};
-      adc_lane_7 <= {adc_lane_7[BW-2:0], db_i_d[7], db_i[7]};
-    end
-  end
-  */
-/*
   always @(posedge scki) begin
-    //if (scki != scki_d) begin
-      adc_lane_0_debug <= {adc_lane_0_debug[BW-1:0], db_i[0]};
-      adc_lane_1_debug <= {adc_lane_1_debug[BW-1:0], db_i[1]};
-      adc_lane_2_debug <= {adc_lane_2_debug[BW-1:0], db_i[2]};
-      adc_lane_3_debug <= {adc_lane_3_debug[BW-1:0], db_i[3]};
-      adc_lane_4_debug <= {adc_lane_4_debug[BW-1:0], db_i[4]};
-      adc_lane_5_debug <= {adc_lane_5_debug[BW-1:0], db_i[5]};
-      adc_lane_6_debug <= {adc_lane_6_debug[BW-1:0], db_i[6]};
-      adc_lane_7_debug <= {adc_lane_7_debug[BW-1:0], db_i[7]};
-    //end
-  end
- */ 
- /*
-  always @(posedge scki) begin
-    //if (scki != scki_d) begin
-    adc_lane_0 <= {adc_lane_0[BW-1:0], db_i[0]};
-    adc_lane_1 <= {adc_lane_1[BW-1:0], db_i[1]};
-    adc_lane_2 <= {adc_lane_2[BW-1:0], db_i[2]};
-    adc_lane_3 <= {adc_lane_3[BW-1:0], db_i[3]};
-    adc_lane_4 <= {adc_lane_4[BW-1:0], db_i[4]};
-    adc_lane_5 <= {adc_lane_5[BW-1:0], db_i[5]};
-    adc_lane_6 <= {adc_lane_6[BW-1:0], db_i[6]};
-    adc_lane_7 <= {adc_lane_7[BW-1:0], db_i[7]};
-    //end
-  end */
-  always @(posedge clk) begin
-    if (scki == 1'b1 && scki_d == 1'b0) begin
+    //if (scki == 1'b1 && scki_d == 1'b0) begin
       adc_lane_0 <= {adc_lane_0[BW-1:0], db_i[0]};
       adc_lane_1 <= {adc_lane_1[BW-1:0], db_i[1]};
       adc_lane_2 <= {adc_lane_2[BW-1:0], db_i[2]};
@@ -366,7 +265,7 @@ module axi_ltc235x_cmos #(
       adc_lane_5 <= {adc_lane_5[BW-1:0], db_i[5]};
       adc_lane_6 <= {adc_lane_6[BW-1:0], db_i[6]};
       adc_lane_7 <= {adc_lane_7[BW-1:0], db_i[7]};
-    end
+    //end
   end
 
   // store the data from the rx buffers when all bits are received
