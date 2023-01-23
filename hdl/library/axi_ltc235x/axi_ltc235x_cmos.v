@@ -235,7 +235,7 @@ module axi_ltc235x_cmos #(
     db_i_d <= db_i;
   end
   always @(negedge scko) begin
-    if (scki != scki_d) begin
+    //if (scki != scki_d) begin
       adc_lane_0 <= {adc_lane_0[BW-2:0], db_i_d[0], db_i[0]};
       adc_lane_1 <= {adc_lane_1[BW-2:0], db_i_d[1], db_i[1]};
       adc_lane_2 <= {adc_lane_2[BW-2:0], db_i_d[2], db_i[2]};
@@ -244,7 +244,7 @@ module axi_ltc235x_cmos #(
       adc_lane_5 <= {adc_lane_5[BW-2:0], db_i_d[5], db_i[5]};
       adc_lane_6 <= {adc_lane_6[BW-2:0], db_i_d[6], db_i[6]};
       adc_lane_7 <= {adc_lane_7[BW-2:0], db_i_d[7], db_i[7]};
-    end
+    //end
   end
 
   // store the data from the rx buffers when all bits are received
