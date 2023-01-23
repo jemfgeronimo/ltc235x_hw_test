@@ -73,15 +73,6 @@ module axi_ltc235x_cmos #(
   output      [31:0]      adc_data_5,
   output      [31:0]      adc_data_6,
   output      [31:0]      adc_data_7,
-  
-  output      [ 2:0]      adc_softspan_0,
-  output      [ 2:0]      adc_softspan_1,
-  output      [ 2:0]      adc_softspan_2,
-  output      [ 2:0]      adc_softspan_3,
-  output      [ 2:0]      adc_softspan_4,
-  output      [ 2:0]      adc_softspan_5,
-  output      [ 2:0]      adc_softspan_6,
-  output      [ 2:0]      adc_softspan_7,
 
   output reg              adc_valid
 );
@@ -94,7 +85,6 @@ module axi_ltc235x_cmos #(
   reg                 busy_m1;
   reg                 busy_m2;
   reg                 busy_m3;
-  reg                 busy_m4;
 
   reg         [ 4:0]  scki_counter = 5'h0;
   reg         [ 4:0]  data_counter = 5'h0;
@@ -163,30 +153,16 @@ module axi_ltc235x_cmos #(
   wire        [ 2:0]  adc_ch_id_s [7:0];
   wire        [ 2:0]  adc_softspan [7:0];
 
-  /*
-  wire        [ 2:0]      adc_softspan_0;
-  wire        [ 2:0]      adc_softspan_1;
-  wire        [ 2:0]      adc_softspan_2;
-  wire        [ 2:0]      adc_softspan_3;
-  wire        [ 2:0]      adc_softspan_4;
-  wire        [ 2:0]      adc_softspan_5;
-  wire        [ 2:0]      adc_softspan_6;
-  wire        [ 2:0]      adc_softspan_7;
-  */
-
   ////////////////////////////////////////////////////// SCKI
 
   always @(posedge clk) begin
     if (rst == 1'b1) begin
       busy_m1 <= 1'b0;
       busy_m2 <= 1'b0;
-      busy_m3 <= 1'b0;
-      busy_m4 <= 1'b0;
     end else begin
       busy_m1 <= busy;
       busy_m2 <= busy_m1;
       busy_m3 <= busy_m2;
-      busy_m4 <= busy_m3;
     end
   end
 
@@ -218,7 +194,6 @@ module axi_ltc235x_cmos #(
 
   assign scki_cnt_rst = (scki_counter == DW);
   assign scki = scki_i | ~acquire_data;
-  //assign scki = scki_i; // for debug
 
   /////////////////////////////////////////////////////////// DATA FLOW
 
@@ -256,7 +231,7 @@ module axi_ltc235x_cmos #(
   // capture data per lane in rx buffers adc_lane_X on every edge of scko
   // ignore when busy forced scko to 0
   always @(posedge scki) begin
-    //if (scki == 1'b1 && scki_d == 1'b0) begin
+    //if (scki != scki_d) begin
       adc_lane_0 <= {adc_lane_0[BW-1:0], db_i[0]};
       adc_lane_1 <= {adc_lane_1[BW-1:0], db_i[1]};
       adc_lane_2 <= {adc_lane_2[BW-1:0], db_i[2]};
@@ -285,7 +260,7 @@ module axi_ltc235x_cmos #(
     end else begin
       data_counter <= scki_counter;
       if (data_counter == DW) begin
-        adc_data_init[0] <= adc_lane_0;                    
+        adc_data_init[0] <= adc_lane_0;
         adc_data_init[1] <= adc_lane_1;
         adc_data_init[2] <= adc_lane_2;
         adc_data_init[3] <= adc_lane_3;
@@ -450,16 +425,6 @@ module axi_ltc235x_cmos #(
   assign adc_ch5_id = adc_ch_id_s[5];
   assign adc_ch6_id = adc_ch_id_s[6];
   assign adc_ch7_id = adc_ch_id_s[7];
-
-  // assign extracted adc softspan to corresponding outputs
-  assign adc_softspan_0 = adc_softspan[0];
-  assign adc_softspan_1 = adc_softspan[1];
-  assign adc_softspan_2 = adc_softspan[2];
-  assign adc_softspan_3 = adc_softspan[3];
-  assign adc_softspan_4 = adc_softspan[4];
-  assign adc_softspan_5 = adc_softspan[5];
-  assign adc_softspan_6 = adc_softspan[6];
-  assign adc_softspan_7 = adc_softspan[7];
 
 //////////////////////////////////////////////////////////// VALID SIGNAL
 
