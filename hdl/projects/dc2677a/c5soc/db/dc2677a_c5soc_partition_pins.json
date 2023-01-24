@@ -136,6 +136,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "sdo_7",
+					"strict" : false
+				},
+				{
 					"name" : "gpio_bd_i[0]",
 					"strict" : false
 				},
@@ -197,10 +201,6 @@
 				},
 				{
 					"name" : "sdo_6",
-					"strict" : false
-				},
-				{
-					"name" : "sdo_7",
 					"strict" : false
 				},
 				{

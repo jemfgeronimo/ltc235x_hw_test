@@ -230,21 +230,37 @@ module axi_ltc235x_cmos #(
 
   // capture data per lane in rx buffers adc_lane_X on every edge of scko
   // ignore when busy forced scko to 0
+  /*
   reg [7:0] db_i_d = 7'b0;
   always @(posedge scko) begin
     db_i_d <= db_i;
   end
   always @(negedge scko) begin
     //if (scki != scki_d) begin
-      adc_lane_0 <= {adc_lane_0[BW-2:0], db_i_d[0], db_i[0]};
-      adc_lane_1 <= {adc_lane_1[BW-2:0], db_i_d[1], db_i[1]};
-      adc_lane_2 <= {adc_lane_2[BW-2:0], db_i_d[2], db_i[2]};
-      adc_lane_3 <= {adc_lane_3[BW-2:0], db_i_d[3], db_i[3]};
-      adc_lane_4 <= {adc_lane_4[BW-2:0], db_i_d[4], db_i[4]};
-      adc_lane_5 <= {adc_lane_5[BW-2:0], db_i_d[5], db_i[5]};
-      adc_lane_6 <= {adc_lane_6[BW-2:0], db_i_d[6], db_i[6]};
-      adc_lane_7 <= {adc_lane_7[BW-2:0], db_i_d[7], db_i[7]};
+      adc_lane_0 <= {adc_lane_0[BW-1:0], db_i[0]};
+      adc_lane_1 <= {adc_lane_1[BW-1:0], db_i[1]};
+      adc_lane_2 <= {adc_lane_2[BW-1:0], db_i[2]};
+      adc_lane_3 <= {adc_lane_3[BW-1:0], db_i[3]};
+      adc_lane_4 <= {adc_lane_4[BW-1:0], db_i[4]};
+      adc_lane_5 <= {adc_lane_5[BW-1:0], db_i[5]};
+      adc_lane_6 <= {adc_lane_6[BW-1:0], db_i[6]};
+      adc_lane_7 <= {adc_lane_7[BW-1:0], db_i[7]};
     //end
+  end
+  */
+  reg scko_d;
+  always@(posedge clk) begin
+    scko_d <= scko;
+    if (scko != scko_d && scki != scki_d) begin
+      adc_lane_0 <= {adc_lane_0[BW-1:0], db_i[0]};
+      adc_lane_1 <= {adc_lane_1[BW-1:0], db_i[1]};
+      adc_lane_2 <= {adc_lane_2[BW-1:0], db_i[2]};
+      adc_lane_3 <= {adc_lane_3[BW-1:0], db_i[3]};
+      adc_lane_4 <= {adc_lane_4[BW-1:0], db_i[4]};
+      adc_lane_5 <= {adc_lane_5[BW-1:0], db_i[5]};
+      adc_lane_6 <= {adc_lane_6[BW-1:0], db_i[6]};
+      adc_lane_7 <= {adc_lane_7[BW-1:0], db_i[7]};
+    end
   end
 
   // store the data from the rx buffers when all bits are received
