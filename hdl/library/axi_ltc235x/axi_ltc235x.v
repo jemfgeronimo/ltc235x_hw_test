@@ -163,6 +163,8 @@ module axi_ltc235x #(
 
   // internal signals
 
+  wire    [23:0]          softspan_next;
+
   wire                    adc_valid;
 
   wire                    up_clk;
@@ -176,9 +178,9 @@ module axi_ltc235x #(
 
   wire    [13:0]          up_addr_s;
   wire    [31:0]          up_wdata_s;
-  wire    [31:0]          up_rdata_s[0:8];
-  wire    [ 8:0]          up_rack_s;
-  wire    [ 8:0]          up_wack_s;
+  wire    [31:0]          up_rdata_s[0:9];
+  wire    [ 9:0]          up_rack_s;
+  wire    [ 9:0]          up_wack_s;
 
   // read raw, feature
   wire                    rd_req_s;
@@ -237,9 +239,29 @@ module axi_ltc235x #(
                   up_rdata_s[5] |
                   up_rdata_s[6] |
                   up_rdata_s[7] |
-                  up_rdata_s[8];
+                  up_rdata_s[8] |
+                  up_rdata_s[9];
     end
   end
+
+  // AXI_LTC235X REGMAP
+
+  axi_ltc235x_regmap #(
+    .SOFTSPAN_NEXT (SOFTSPAN_NEXT))
+  i_ltc235x_regmap (
+    .softspan_next (softspan_next),
+    .up_rstn (up_rstn),
+    .up_clk (up_clk),
+    .up_wreq (up_wreq_s),
+    .up_waddr (up_waddr_s),
+    .up_wdata (up_wdata_s),
+    .up_wack (up_wack_s[9]),
+    .up_rreq (up_rreq_s),
+    .up_raddr (up_raddr_s),
+    .up_rdata (up_rdata_s[9]),
+    .up_rack (up_rack_s[9]));
+
+  // CMOS/LVDS INTERFACE
 
   generate
     if (EXTERNAL_CLK == 1'b1) begin
@@ -256,12 +278,12 @@ module axi_ltc235x #(
       axi_ltc235x_cmos #(
         .NUM_CHANNELS (NUM_CHANNELS),
         .DATA_WIDTH (DATA_WIDTH),
-        .ACTIVE_LANE (ACTIVE_LANES),
-        .SOFTSPAN_NEXT (SOFTSPAN_NEXT))
+        .ACTIVE_LANE (ACTIVE_LANES))
       i_ltc235x_cmos (
         .rst (adc_rst_s),
         .clk (adc_clk_s),
         .adc_enable (adc_enable),
+        .softspan_next (softspan_next),
         .scki (scki),
         .db_o (sdi),
         .scko (scko),

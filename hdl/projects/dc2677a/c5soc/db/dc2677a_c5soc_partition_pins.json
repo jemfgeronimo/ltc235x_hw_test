@@ -124,15 +124,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "cnv",
-					"strict" : false
-				},
-				{
 					"name" : "scki",
 					"strict" : false
 				},
 				{
 					"name" : "sdi",
+					"strict" : false
+				},
+				{
+					"name" : "cnv",
 					"strict" : false
 				},
 				{
