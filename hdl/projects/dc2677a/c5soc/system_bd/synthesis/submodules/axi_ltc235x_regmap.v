@@ -36,7 +36,7 @@
 `timescale 1ns/100ps
 
 module axi_ltc235x_regmap #(
-	parameter SOFTSPAN_NEXT = 24'hff_ffff // TODO: make this an input signal
+	parameter SOFTSPAN_NEXT = 24'hff_ffff
 ) (
 
   output      [23:0]  softspan_next,
@@ -95,6 +95,7 @@ module axi_ltc235x_regmap #(
   // processor write interface
 
   assign softspan_next = softspan_next_int;
+
   always @(posedge up_clk) begin
     if (up_rstn == 0) begin
       up_wack_int <= 'd0;
